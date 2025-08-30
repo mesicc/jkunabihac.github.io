@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Stranica dolazi uskoro. Radimo na novoj web stranici – pratite nas!" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <title>Stranica dolazi uskoro</title>
+  <style>
+    :root {
+      --bg: radial-gradient(1000px 600px at 10% 10%, #e0f2fe, transparent),
+             radial-gradient(900px 500px at 90% 20%, #ffe4e6, transparent),
+             radial-gradient(800px 600px at 50% 100%, #dcfce7, transparent),
+             #0b1220;
+      --card: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      line-height: 1.5;
+    }
+    .wrap {
+      width: min(720px, 92vw);
+      text-align: center;
+      padding: 2.5rem;
+      border-radius: 1.25rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      box-shadow: 0 10px 40px rgba(2, 6, 23, 0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.18);
+      animation: pop 600ms cubic-bezier(.2,.8,.2,1) 60ms both;
+    }
+    @keyframes pop { from { transform: translateY(8px) scale(.98); opacity: 0; } to { transform: none; opacity: 1; } }
+
+    .logo {
+      width: 64px; height: 64px; margin: 0 auto 1rem;
+      border-radius: 16px;
+      background: conic-gradient(from 180deg at 50% 50%, #38bdf8, #a78bfa, #f472b6, #38bdf8);
+      filter: drop-shadow(0 6px 24px rgba(56,189,248,.45));
+    }
+    h1 { font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem); margin: .25rem 0 0.5rem; letter-spacing: .2px; }
+    p { margin: .25rem 0 1.25rem; color: var(--muted); }
+
+    .badge {
+      display: inline-flex; gap: .5rem; align-items: center; justify-content: center;
+      background: var(--card);
+      padding: .5rem .75rem; border-radius: 999px; font-size: .9rem;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .badge dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); display: inline-block; box-shadow: 0 0 0 6px rgba(56,189,248,.15); }
+
+    .footer { margin-top: 1.25rem; font-size: .95rem; color: var(--muted); }
+    .footer a { color: var(--text); text-underline-offset: 3px; }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main" aria-label="Obavijest: stranica dolazi uskoro">
+    <div class="logo" aria-hidden="true"></div>
+    <div class="badge" aria-live="polite"><dot></dot> Stranica dolazi uskoro</div>
+    <h1>Radimo na novoj web stranici</h1>
+    <p>Hvala na strpljenju. U međuvremenu, možete nas kontaktirati putem e‑pošte.</p>
+
+    <p class="footer">
+      Pišite na <a href="mailto:kemalmesic26@gmail.com">kemalmesic26@gmail.com</a>
+    </p>
+  </main>
+</body>
+</html>
