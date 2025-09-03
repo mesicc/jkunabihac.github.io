@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija - Judo Klub Una Bihać</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Judo Klub Una</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Početna</a></li>
+                <li><a href="galerija.html" class="nav-link active">Galerija</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="o-klubu.html" class="nav-link">O Klubu</a></li>
+                <li><a href="turnir.html" class="nav-link">Turnir</a></li>
+                <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                <li class="language-switcher">
+                    <select id="language-select">
+                        <option value="bs">Bosanski</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="gallery-hero">
+            <div class="gallery-hero-container">
+                <h1>Galerija</h1>
+                <p>Pogledajte slike sa naših treninga, takmičenja i događaja</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-container">
+                <div class="gallery-controls">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Sve</button>
+                        <button class="filter-btn" data-filter="treninzi">Treninzi</button>
+                        <button class="filter-btn" data-filter="takmicenja">Takmičenja</button>
+                        <button class="filter-btn" data-filter="uspjesi">Uspjesi</button>
+                        <button class="filter-btn" data-filter="dogadjaji">Događaji</button>
+                    </div>
+                    <button class="btn upload-btn" id="upload-btn">Dodaj novu sliku</button>
+                </div>
+
+                <div class="gallery-grid" id="gallery-grid">
+                     Gallery items will be populated by JavaScript 
+                </div>
+            </div>
+        </section>
+    </main>
+
+     Upload Modal 
+    <div class="modal" id="upload-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Dodaj novu sliku</h3>
+                <span class="close" id="close-upload">&times;</span>
+            </div>
+            <form class="upload-form" id="upload-form">
+                <div class="form-group">
+                    <label for="image-file">Odaberite sliku:</label>
+                    <input type="file" id="image-file" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="image-title">Naziv slike:</label>
+                    <input type="text" id="image-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="image-category">Kategorija:</label>
+                    <select id="image-category" required>
+                        <option value="">Odaberite kategoriju</option>
+                        <option value="treninzi">Treninzi</option>
+                        <option value="takmicenja">Takmičenja</option>
+                        <option value="uspjesi">Uspjesi</option>
+                        <option value="dogadjaji">Događaji</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="image-description">Opis (opcionalno):</label>
+                    <textarea id="image-description" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">Dodaj sliku</button>
+            </form>
+        </div>
+    </div>
+
+     Lightbox Modal 
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightbox-close">&times;</span>
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
+            <img class="lightbox-image" id="lightbox-image" src="/placeholder.svg" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+                <span id="lightbox-date"></span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Judo Klub Una</h3>
+                    <p>Tradicija, disciplina i uspjeh od 1986. godine</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>📍 Sportska dvorana "Una", Bihać</p>
+                    <p>📞 +387 37 123-456</p>
+                    <p>✉️ info@judoklubuna.ba</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Radno vrijeme</h4>
+                    <p>Pon-Pet: 17:00 - 21:00</p>
+                    <p>Sub: 09:00 - 12:00</p>
+                    <p>Ned: Zatvoreno</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Judo Klub Una Bihać. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

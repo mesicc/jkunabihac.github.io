@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Judo Klub Una Bihać</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Judo Klub Una</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Početna</a></li>
+                <li><a href="galerija.html" class="nav-link">Galerija</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="o-klubu.html" class="nav-link">O Klubu</a></li>
+                <li><a href="turnir.html" class="nav-link">Turnir</a></li>
+                <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                <li class="language-switcher">
+                    <select id="language-select">
+                        <option value="bs">Bosanski</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="blog-hero">
+            <div class="blog-hero-container">
+                <h1>Blog</h1>
+                <p>Najnovije vijesti, savjeti i priče iz svijeta juda</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="blog-container">
+                <div class="blog-controls">
+                    <div class="blog-filters">
+                        <button class="filter-btn active" data-filter="all">Sve</button>
+                        <button class="filter-btn" data-filter="vijesti">Vijesti</button>
+                        <button class="filter-btn" data-filter="tehnike">Tehnike</button>
+                        <button class="filter-btn" data-filter="takmicenja">Takmičenja</button>
+                        <button class="filter-btn" data-filter="savjeti">Savjeti</button>
+                    </div>
+                    <div class="blog-actions">
+                        <input type="text" id="search-input" placeholder="Pretraži postove..." class="search-input">
+                        <button class="btn create-post-btn" id="create-post-btn">Novi post</button>
+                    </div>
+                </div>
+
+                <div class="blog-grid" id="blog-grid">
+                     Blog posts will be populated by JavaScript 
+                </div>
+            </div>
+        </section>
+    </main>
+
+     Create Post Modal 
+    <div class="modal" id="create-post-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Kreiraj novi blog post</h3>
+                <span class="close" id="close-create-post">&times;</span>
+            </div>
+            <form class="create-post-form" id="create-post-form">
+                <div class="form-group">
+                    <label for="post-title">Naslov posta:</label>
+                    <input type="text" id="post-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="post-category">Kategorija:</label>
+                    <select id="post-category" required>
+                        <option value="">Odaberite kategoriju</option>
+                        <option value="vijesti">Vijesti</option>
+                        <option value="tehnike">Tehnike</option>
+                        <option value="takmicenja">Takmičenja</option>
+                        <option value="savjeti">Savjeti</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="post-excerpt">Kratak opis:</label>
+                    <textarea id="post-excerpt" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Sadržaj posta:</label>
+                    <textarea id="post-content" rows="10" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="post-image">URL slike (opcionalno):</label>
+                    <input type="url" id="post-image" placeholder="https://example.com/image.jpg">
+                </div>
+                <button type="submit" class="btn">Objavi post</button>
+            </form>
+        </div>
+    </div>
+
+     Blog Post Modal 
+    <div class="modal" id="blog-post-modal">
+        <div class="modal-content blog-post-content">
+            <div class="modal-header">
+                <span class="close" id="close-blog-post">&times;</span>
+            </div>
+            <div class="blog-post-full" id="blog-post-full">
+                 Full blog post content will be populated here 
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Judo Klub Una</h3>
+                    <p>Tradicija, disciplina i uspjeh od 1986. godine</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>📍 Sportska dvorana "Una", Bihać</p>
+                    <p>📞 +387 37 123-456</p>
+                    <p>✉️ info@judoklubuna.ba</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Radno vrijeme</h4>
+                    <p>Pon-Pet: 17:00 - 21:00</p>
+                    <p>Sub: 09:00 - 12:00</p>
+                    <p>Ned: Zatvoreno</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Judo Klub Una Bihać. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
