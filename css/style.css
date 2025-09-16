@@ -1,49 +1,24 @@
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --primary-color: #0891b2;
-  --primary-dark: #0e7490;
-  --accent-color: #ec4899;
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --border: #e2e8f0;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-}
-
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: var(--foreground);
-  background-color: var(--background);
+  color: #333;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Work Sans", sans-serif;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-/* Navigation */
+/* Navbar Styles */
 .navbar {
-  background: var(--card);
+  background-color: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  border-bottom: 2px solid #87ceeb;
 }
 
 .nav-container {
@@ -56,390 +31,471 @@ h6 {
   height: 70px;
 }
 
-.nav-logo h2 {
-  color: var(--primary-color);
-  font-size: 1.5rem;
+/* Logo */
+.nav-logo {
+  flex-shrink: 0;
 }
 
+.logo-img {
+  height: 50px;
+  width: auto;
+}
+
+/* Desktop Navigation */
 .nav-menu {
   display: flex;
   list-style: none;
-  align-items: center;
-  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-item {
+  position: relative;
 }
 
 .nav-link {
   text-decoration: none;
-  color: var(--foreground);
+  color: #333;
   font-weight: 500;
+  font-size: 16px;
+  padding: 10px 0;
   transition: color 0.3s ease;
-  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: var(--primary-color);
+.nav-link:hover {
+  color: #ff69b4;
 }
 
-.language-switcher select {
-  padding: 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--background);
-  color: var(--foreground);
-  font-size: 0.875rem;
+/* Dropdown */
+.dropdown-arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
 }
 
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  border: 1px solid #87ceeb;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dropdown-link:hover {
+  background-color: #87ceeb;
+  color: #ffffff;
+}
+
+/* Language Selector */
+.language-selector {
+  margin-left: 20px;
+}
+
+.lang-select {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lang-select:hover {
+  background-color: #ff1493;
+}
+
+.lang-select option {
+  background-color: white;
+  color: #333;
+}
+
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  gap: 4px;
 }
 
-.hamburger span {
+.bar {
   width: 25px;
   height: 3px;
-  background: var(--foreground);
-  margin: 3px 0;
+  background-color: #333;
   transition: 0.3s;
+  border-radius: 2px;
 }
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  color: white;
-  padding: 120px 0 80px;
-  text-align: center;
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-top: 70px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Replaced old hero styles with new judo club hero section */
+.hero-section {
+  padding: 80px 0;
 }
 
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.hero h1 {
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero-badge {
+  background-color: #ff69b4;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.hero-title {
   font-size: 3.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: #333;
+  line-height: 1.1;
+  margin: 0;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+.hero-description {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: var(--accent-color);
+.btn-primary {
+  background-color: #4a90e2;
   color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.3s ease;
   border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-.btn:hover {
-  background: #db2777;
+.btn-primary:hover {
+  background-color: #357abd;
   transform: translateY(-2px);
 }
 
-.btn-outline {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: var(--primary-color);
-}
-
-/* Stats Section */
-.stats {
-  background: var(--muted);
-  padding: 60px 0;
-}
-
-.stats-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-.stat-item h3 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.stat-item p {
-  color: var(--muted-foreground);
-  font-size: 1.1rem;
-}
-
-/* Cards */
-.card {
-  background: var(--card);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card h3 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-/* Benefits Section */
-.benefits {
-  padding: 80px 0;
-  background: var(--background);
-}
-
-.benefits-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  color: var(--foreground);
-  margin-bottom: 1rem;
-}
-
-.section-header p {
-  font-size: 1.1rem;
-  color: var(--muted-foreground);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-/* Quick Links Section */
-.quick-links {
-  padding: 80px 0;
-  background: var(--muted);
-}
-
-.quick-links-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.quick-links h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--foreground);
-}
-
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.link-card {
-  background: var(--card);
-  padding: 2rem;
-  border-radius: 12px;
-  text-decoration: none;
-  color: var(--foreground);
+.btn-secondary {
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #e5e5e5;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
-.link-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.btn-secondary:hover {
+  border-color: #4a90e2;
+  color: #4a90e2;
 }
 
-.link-card h3 {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
 }
 
-.link-card p {
-  color: var(--muted-foreground);
-  margin-bottom: 1rem;
+.stat-item {
+  text-align: left;
 }
 
-.link-arrow {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  transition: transform 0.3s ease;
-}
-
-.link-card:hover .link-arrow {
-  transform: translateX(5px);
-}
-
-/* Call-to-Action Section */
-.cta {
-  padding: 80px 0;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  color: white;
-  text-align: center;
-}
-
-.cta-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.cta h2 {
+.stat-number {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-weight: 800;
+  color: #4a90e2;
+  line-height: 1;
 }
 
-.cta p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+.stat-label {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
 }
 
-/* Footer */
-.footer {
-  background: var(--foreground);
-  color: white;
-  padding: 60px 0 20px;
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.hero-image-mobile {
+  display: none;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+.judo-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.footer-section h3,
-.footer-section h4 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+.achievement-badge {
+  position: absolute;
+  bottom: 30px;
+  left: -30px;
+  background-color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
 }
 
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid #374151;
-  color: #9ca3af;
+.trophy-icon {
+  font-size: 24px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
+.achievement-text {
+  display: flex;
+  flex-direction: column;
+}
 
+.achievement-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.achievement-year {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
   .nav-menu {
     position: fixed;
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background-color: var(--card);
+    background-color: #ffffff;
     width: 100%;
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 2rem 0;
+    padding: 20px 0;
+    gap: 0;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
   }
 
   .nav-menu.active {
     left: 0;
   }
 
-  .hero h1 {
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-link {
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background-color: #f8f9fa;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .dropdown.mobile-active .dropdown-menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .language-selector {
+    position: absolute;
+    top: 15px;
+    right: 70px;
+    margin: 0;
+  }
+
+  .lang-select {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  /* Updated mobile hero section to show image between title and description */
+  .hero-section {
+    padding: 60px 0;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-title {
     font-size: 2.5rem;
   }
 
-  .hero p {
-    font-size: 1.1rem;
+  /* Show mobile image between title and description */
+  .hero-image-mobile {
+    display: flex;
+    margin: 20px 0;
   }
 
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  /* Hide desktop image on mobile */
+  .hero-image {
+    display: none;
   }
 
-  .benefits-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+  .hero-description {
+    font-size: 1rem;
   }
 
-  .links-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+  /* Hide achievement badge on mobile */
+  .achievement-badge {
+    display: none;
+  }
+
+  /* Align buttons with image width */
+  .hero-buttons {
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    flex: 1;
+    max-width: 200px;
   }
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
+@media screen and (max-width: 480px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .language-selector {
+    right: 60px;
+  }
+
+  .main-content {
+    padding: 20px 15px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  /* Added extra small mobile styles */
+  .hero-container {
+    padding: 0 15px;
+  }
+
+  .hero-title {
     font-size: 2rem;
   }
 
-  .stats-container {
-    grid-template-columns: 1fr;
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
-  .card {
-    padding: 1.5rem;
-  }
-
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .links-grid {
-    grid-template-columns: 1fr;
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 280px;
   }
 }
