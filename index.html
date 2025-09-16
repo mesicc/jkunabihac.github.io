@@ -3,168 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judo Klub Una - Bihać</title>
+    <title>Judo Klub Una Bihać - Home</title>
+
+    <!----------    CSS Poveznice    ---------->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Judo Klub Una</h2>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link active">Početna</a></li>
-                <li><a href="galerija.html" class="nav-link">Galerija</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="o-klubu.html" class="nav-link">O Klubu</a></li>
-                <li><a href="turnir.html" class="nav-link">Turnir</a></li>
-                <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
-                <li class="language-switcher">
-                    <select id="language-select">
-                        <option value="bs">Bosanski</option>
-                        <option value="en">English</option>
-                        <option value="de">Deutsch</option>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <img src="img/logo.jpg" alt="Logo" class="logo-img">
+                </div>
+
+                <!-- Desktop Navigacija -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Početna</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="onama.html" class="nav-link dropdown-toggle">
+                            O nama
+                            <i class="dropdown-arrow">▼</i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="historija-juda.html" class="dropdown-link">Historija Juda</a></li>
+                            <li><a href="historija-kluba.html" class="dropdown-link">Historija Kluba</a></li>
+                            <li><a href="blackbelts.html" class="dropdown-link">BlackBelts</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="galerija.html" class="nav-link">Galerija</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Novosti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="una-kup.html" class="nav-link">Una Kup</a>
+                    </li>
+                </ul>
+
+                <!-- Izbor jezika -->
+                <div class="language-selector">
+                    <select class="lang-select">
+                        <option value="bs" selected>BS</option>
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
                     </select>
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+                </div>
 
-    <main>
-        <section class="hero">
-            <div class="hero-container">
-                <h1>Judo Klub Una Bihać</h1>
-                <p>Tradicija, disciplina i uspjeh od 1986. godine</p>
-                <div class="hero-buttons">
-                    <a href="kontakt.html" class="btn">Pridruži se</a>
-                    <a href="o-klubu.html" class="btn btn-outline">Saznaj više</a>
+                <!-- Mobilni Hamburger -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </div>
-        </section>
+        </nav>
 
-        <section class="stats">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <h3>150+</h3>
-                    <p>Aktivnih članova</p>
-                </div>
-                <div class="stat-item">
-                    <h3>38</h3>
-                    <p>Godina tradicije</p>
-                </div>
-                <div class="stat-item">
-                    <h3>25+</h3>
-                    <p>Osvojenih medalja</p>
-                </div>
-                <div class="stat-item">
-                    <h3>5</h3>
-                    <p>Licenciranih trenera</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="benefits">
-            <div class="benefits-container">
-                <div class="section-header">
-                    <h2>Zašto odabrati Judo Klub Una?</h2>
-                    <p>Otkrijte prednosti treniranja juda u našem klubu</p>
-                </div>
-                <div class="benefits-grid">
-                    <div class="card">
-                        <div class="card-icon">🥋</div>
-                        <h3>Iskusni treneri</h3>
-                        <p>Naši licencirani treneri imaju dugogodišnje iskustvo u radu sa judašima svih uzrasta i nivoa.</p>
+        <!-- Glavni dio Headera -->
+        <main class="main-content">
+        <!-- Replaced demo content with judo club hero section -->
+            <section class="hero-section">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            Osnovan 1985. godine
+                        </div>
+                        
+                        <h1 class="hero-title"> Judo Klub<br>Una Bihać </h1>
+                        
+                        <!-- Added mobile image placement between title and description -->
+                        <div class="hero-image-mobile">
+                            <img src="img/header-img.png" alt="Judo trening" class="judo-image">
+                            <div class="achievement-badge">
+                                <div class="trophy-icon">🏆</div>
+                                <div class="achievement-text">
+                                    <div class="achievement-title">Državni prvaci</div>
+                                    <div class="achievement-year">2023. godina</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="hero-description">
+                            Pridružite se našoj judo porodici i otkrijte snagu, disciplinu i duh borbe koji judo donosi. Naš klub postoji već 25 godina i ponosan je na svoje uspjehe.
+                        </p>
+                        
+                        <div class="hero-buttons">
+                            <button class="btn-primary">Počni svoju judo priču</button>
+                            <button class="btn-secondary">Saznaj više</button>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">150+</div>
+                                <div class="stat-label">Aktivnih članova</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">38</div>
+                                <div class="stat-label">Godina tradicije</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">25+</div>
+                                <div class="stat-label">Osvojenih medalja</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card">
-                        <div class="card-icon">🏆</div>
-                        <h3>Dokazani rezultati</h3>
-                        <p>Naši članovi redovno osvajaju medalje na lokalnim, državnim i međunarodnim takmičenjima.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">👥</div>
-                        <h3>Zajednica</h3>
-                        <p>Pridružite se velikoj porodici judaša i stvorite prijateljstva koja traju cijeli život.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">💪</div>
-                        <h3>Fizička kondicija</h3>
-                        <p>Judo razvija snagu, fleksibilnost, koordinaciju i mentalne sposobnosti.</p>
+                    
+                    <!-- Updated image source and kept desktop version -->
+                    <div class="hero-image">
+                        <img src="img/header-img.png" alt="Judo trening" class="judo-image">
+                        <div class="achievement-badge">
+                            <div class="trophy-icon">🏆</div>
+                            <div class="achievement-text">
+                                <div class="achievement-title">Državni prvaci</div>
+                                <div class="achievement-year">2023. godina</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
+    </header>
 
-        <section class="quick-links">
-            <div class="quick-links-container">
-                <h2>Istražite naš klub</h2>
-                <div class="links-grid">
-                    <a href="galerija.html" class="link-card">
-                        <h3>Galerija</h3>
-                        <p>Pogledajte slike sa treninga i takmičenja</p>
-                        <span class="link-arrow">→</span>
-                    </a>
-                    <a href="blog.html" class="link-card">
-                        <h3>Blog</h3>
-                        <p>Čitajte najnovije vijesti i savjete</p>
-                        <span class="link-arrow">→</span>
-                    </a>
-                    <a href="turnir.html" class="link-card">
-                        <h3>Kup Una 2024</h3>
-                        <p>Informacije o našem godišnjem turniru</p>
-                        <span class="link-arrow">→</span>
-                    </a>
-                    <a href="o-klubu.html" class="link-card">
-                        <h3>O nama</h3>
-                        <p>Saznajte više o istoriji i vrijednostima kluba</p>
-                        <span class="link-arrow">→</span>
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <section class="cta">
-            <div class="cta-container">
-                <h2>Spremni ste za početak?</h2>
-                <p>Pridružite se Judo Klubu Una i započnite svoje putovanje u svijetu juda</p>
-                <a href="kontakt.html" class="btn">Kontaktirajte nas</a>
-            </div>
-        </section>
-    </main>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Judo Klub Una</h3>
-                    <p>Tradicija, disciplina i uspjeh od 1986. godine</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Kontakt</h4>
-                    <p>📍 Sportska dvorana "Una", Bihać</p>
-                    <p>📞 +387 37 123-456</p>
-                    <p>✉️ info@judoklubuna.ba</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Radno vrijeme</h4>
-                    <p>Pon-Pet: 17:00 - 21:00</p>
-                    <p>Sub: 09:00 - 12:00</p>
-                    <p>Ned: Zatvoreno</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Judo Klub Una Bihać. Sva prava zadržana.</p>
-            </div>
-        </div>
-    </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
