@@ -455,6 +455,56 @@ body {
     flex: 1;
     max-width: 200px;
   }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .principles-title {
+    font-size: 1.8rem;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .principles-left,
+  .principles-right {
+    order: 2;
+  }
+
+  .principles-center {
+    order: 1;
+  }
+
+  .judoka-image {
+    max-width: 250px;
+  }
+
+  .principle-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .right-align {
+    text-align: center;
+  }
+
+  .principle-name {
+    font-size: 1.1rem;
+  }
+
+  .principle-desc {
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -497,5 +547,350 @@ body {
   .btn-secondary {
     width: 100%;
     max-width: 280px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .principles-number {
+    font-size: 3rem;
+  }
+
+  .principles-title {
+    font-size: 1.5rem;
+  }
+
+  .judoka-image {
+    max-width: 200px;
+  }
+}
+
+/* Added new sections for judo content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #4a90e2;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e5e5e5;
+  padding: 60px 0 20px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-logo-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+}
+
+.footer-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 400px;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #4a90e2;
+}
+
+.social-media {
+  margin-top: 25px;
+}
+
+.social-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link.facebook {
+  background-color: #1877f2;
+  color: white;
+}
+
+.social-link.facebook:hover {
+  background-color: #166fe5;
+  transform: translateY(-2px);
+}
+
+.social-link.youtube {
+  background-color: #ff0000;
+  color: white;
+}
+
+.social-link.youtube:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+}
+
+.social-link.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+}
+
+.social-link.instagram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(188, 24, 136, 0.4);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-copyright p,
+.footer-developer p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.footer-developer a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-developer a:hover {
+  color: #357abd;
+}
+
+/* Footer Mobile Styles */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-logo-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .footer-logo-text {
+    font-size: 1.3rem;
+  }
+
+  .footer-description {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Hide quick links on mobile */
+  .footer-quick-links {
+    display: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 30px 0 15px;
+  }
+
+  .footer-container {
+    padding: 0 15px;
+  }
+
+  .footer-content {
+    gap: 30px;
+  }
+
+  .footer-logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer-logo-text {
+    font-size: 1.2rem;
+  }
+
+  .footer-description {
+    font-size: 0.9rem;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+  }z
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-item {
+    font-size: 0.9rem;
   }
 }
