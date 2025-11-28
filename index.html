@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Judo Klub Una Bihać - Početna</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -74,15 +74,12 @@
     <section class="hero">
         <!-- Video Background Placeholder -->
         <div class="hero-background">
-            <div class="video-placeholder">
-                <svg class="video-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                <p class="video-text">
-                    Video će biti dodan ovdje<br>
-                    (Dodajte video element sa position: absolute)
-                </p>
-            </div>
+            <!-- Added video element for background -->
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="img/video.mp4" type="video/mp4">
+                <source src="img/video.webm" type="video/webm">
+                Vaš pretraživač ne podržava video.
+            </video>
             <div class="hero-overlay"></div>
         </div>
 
