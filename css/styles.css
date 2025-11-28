@@ -1042,4 +1042,804 @@ body {
 }
 
 
+/* --- STATS SECTION STYLES (AŽURIRANO) --- */
 
+.stats-section {
+    padding: 5rem 0;
+    /* Tražena siva pozadina */
+    background-color: var(--color-accent); 
+    text-align: center;
+}
+
+.dark .stats-section {
+    background-color: var(--color-background); 
+}
+
+.stats-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-foreground);
+    margin-bottom: 3rem;
+}
+
+.dark .stats-title {
+    color: var(--color-foreground);
+}
+
+.stats-grid {
+    display: grid;
+    /* Na mobilnim uređajima, 2 kolone */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    background-color: var(--color-background);
+    padding: 2rem 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border); /* Dodatna linija za definiciju */
+}
+
+.dark .stat-card {
+    background-color: var(--color-accent);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-border);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark .stat-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.stat-number {
+    /* Smanjena veličina fonta na 3xl za mobilni */
+    font-size: var(--font-size-3xl); 
+    font-weight: 800;
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+/* --- BOJE MEDALJA --- */
+.stat-gold {
+    color: #ffd700; /* Zlatna */
+}
+
+.stat-silver {
+    color: #c0c0c0; /* Srebrna */
+}
+
+.stat-bronze {
+    color: #cd7f32; /* Bronzana */
+}
+
+.stat-champions {
+    /* Korištenje primarne crvene za naglasak */
+    color: var(--color-primary); 
+}
+/* --- KRAJ BOJA MEDALJA --- */
+
+
+.stat-label {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dark .stat-label {
+    color: #a3a3a3;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS for Stats Section --- */
+
+/* Tablet (640px) */
+@media (min-width: 640px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 2rem;
+    }
+    
+    .stats-title {
+        font-size: var(--font-size-4xl);
+        margin-bottom: 4rem;
+    }
+
+    .stat-number {
+        font-size: var(--font-size-4xl); /* Veći broj na tabletu */
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .stats-section {
+        padding: 7rem 0;
+    }
+
+    .stat-number {
+        font-size: var(--font-size-5xl); /* Najveći broj na desktopu */
+    }
+}
+
+
+/* --- BLOG & NEWS SECTION STYLES (NOVO) --- */
+
+.blog-section {
+    padding: 5rem 0;
+    /* Tamna pozadina kao na slici */
+    background-color: #171717;
+}
+
+/* Prilagođavanje za Dark Mode - ostavljamo tamnu pozadinu slične nijanse */
+.dark .blog-section {
+    background-color: #0a0a0a;
+}
+
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 0 0.5rem;
+}
+
+.blog-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-background); /* Bela boja naslova na tamnoj pozadini */
+}
+
+.view-more-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary); /* Crvena boja za link */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.view-more-link:hover {
+    color: var(--color-primary); /* Može se dodati blagi hover efekat */
+    opacity: 0.8;
+}
+
+.view-more-link svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-primary);
+}
+
+/* Blog Grid */
+.blog-grid {
+    display: grid;
+    /* 1 kolona na mobilnom */
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+}
+
+.blog-card {
+    background-color: var(--color-accent); /* Svetlija pozadina kartice */
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .blog-card {
+    background-color: #262626; /* Tamnija kartica u dark mode-u */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 200px; /* Fiksna visina slike na mobilnom */
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #333; /* Fallback boja ako nema slike */
+}
+
+.card-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+    z-index: 10;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-heading {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-foreground);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.dark .card-heading {
+    color: var(--color-background);
+}
+
+.card-date {
+    font-size: var(--font-size-base);
+    color: var(--color-muted);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS for Blog Section --- */
+
+/* Tablet (640px) */
+@media (min-width: 640px) {
+    .blog-grid {
+        /* 2 kolone na tabletu */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .blog-section {
+        padding: 7rem 0;
+    }
+
+    .blog-grid {
+        /* 3 kolone na desktopu */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 2.5rem;
+    }
+    
+    .blog-title {
+        font-size: var(--font-size-4xl);
+    }
+
+    .card-image-wrapper {
+        height: 220px;
+    }
+}
+
+
+
+
+/* --- CONTACT US SECTION STYLES (AŽURIRANO I POPRAVLJENO) --- */
+
+.contact-section {
+    padding: 5rem 0;
+    background-color: var(--color-accent); 
+    text-align: center;
+    position: relative; 
+    overflow-x: hidden; /* Dodato da se spreči horizontalni scroll zbog slike */
+}
+
+.dark .contact-section {
+    background-color: var(--color-background);
+}
+
+.contact-header-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-foreground);
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* Kontakt Forma */
+.contact-form-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1.5rem; 
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 550px; 
+    margin: 0 auto;
+}
+
+.dark .contact-form-card {
+    background-color: #171717;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.form-title {
+    font-family: Georgia, serif; 
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-style: italic; 
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group label {
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-muted);
+    margin-bottom: 0; 
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none; 
+    border-radius: var(--radius);
+    background-color: #ededed; 
+    color: var(--color-foreground);
+    transition: background-color var(--transition);
+}
+
+.dark .input-group input,
+.dark .input-group textarea {
+    background-color: #262626; 
+    color: #fafafa;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2); 
+    background-color: #ffffff;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--color-primary); 
+    color: white; 
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+    margin-top: 0.5rem;
+}
+
+.submit-button:hover {
+    background-color: #b91c1c; 
+    transform: translateY(-2px);
+}
+
+/* Slika (sakrivena na mobilnom) */
+.contact-image-container {
+    display: none; 
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS for Contact Section --- */
+
+/* Tablet (640px) */
+@media (min-width: 640px) {
+    .form-row {
+        flex-direction: row; 
+        gap: 1.5rem; 
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .contact-section {
+        padding: 7rem 0;
+    }
+    
+    .contact-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        max-width: 1100px; /* Može se malo povećati ili smanjiti po potrebi */
+        margin: 0 auto;
+    }
+    
+    .contact-form-card {
+        flex: 1; 
+        padding: 3rem;
+        max-width: 550px; /* Ograničenje širine forme */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        margin: 0; 
+    }
+    
+    .contact-image-container {
+        display: block; 
+        flex-shrink: 0;
+        width: 350px; /* Fiksna širina slike */
+        height: 500px; /* Fiksna visina slike */
+        overflow: hidden;
+        margin-left: 2rem; /* Pozicioniranje slike desno od forme sa razmakom */
+        border-radius: var(--radius);
+        /* Uklonjena crna pozadina, slika će biti na sivoj pozadini sekcije */
+        background-color: transparent; 
+    }
+
+    .contact-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 5%; 
+    }
+    
+    .dark .contact-image-container {
+        background-color: transparent; /* I u tamnom modu bez crne pozadine */
+    }
+}
+
+
+/* --- PARTNERS & SPONSORS SECTION STYLES (AŽURIRANO) --- */
+
+.partners-section {
+    padding: 6rem 0;
+    /* Bela ili svetla pozadina */
+    background-color: #ffffff; 
+    text-align: center;
+}
+
+.dark .partners-section {
+    background-color: var(--color-background);
+}
+
+.partners-header {
+    margin-bottom: 4rem;
+}
+
+.partners-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 900;
+    color: var(--color-foreground); /* Crna boja za tekst */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.dark .partners-title {
+    color: var(--color-background);
+}
+
+/* Naglašena reč PARTNERI - SADA CRVENA */
+.accent-word {
+    /* Koristimo primarnu crvenu boju */
+    color: var(--color-primary); 
+}
+
+.partners-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-muted);
+    max-width: 500px;
+    margin: 0.5rem auto 0;
+}
+
+/* Grid za Logotipe */
+.logos-grid {
+    display: grid;
+    /* 2 kolone na mobilnom, sa centralnim poravnanjem */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 3rem 1.5rem;
+    align-items: center;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.logo-item {
+    padding: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    display: flex; /* Koristimo flexbox za centriranje unutar stavke */
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+}
+
+.logo-item:hover {
+    opacity: 1;
+}
+
+.partner-logo {
+    display: block;
+    width: 100%;
+    /* Ograničavamo maksimalnu visinu na mobilnom da logotipi ne budu preveliki */
+    max-height: 80px; 
+    height: auto;
+    object-fit: contain;
+}
+
+/* Prilagodba za Dark Mode - logotipi su crno-beli, pa ih invertujemo */
+.dark .partner-logo {
+    filter: invert(0.8) brightness(1.5); 
+}
+
+/* --- RESPONSIVE ADJUSTMENTS for Partners Section --- */
+
+/* Tablet (640px) */
+@media (min-width: 640px) {
+    .logos-grid {
+        /* Prelazimo na 4 kolone na većim ekranima */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 4rem 2rem;
+    }
+    
+    .partners-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .partner-logo {
+        max-height: 100px;
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .partners-section {
+        padding: 8rem 0;
+    }
+}
+
+
+
+/* --- LOCATION & MAP SECTION STYLES (NOVO) --- */
+
+.location-section {
+    padding: 5rem 0;
+    /* Možete izabrati bijelu ili blago sivu pozadinu, kao na slici */
+    background-color: #f7f7f7; 
+    text-align: center;
+}
+
+.dark .location-section {
+    background-color: var(--color-background);
+}
+
+.location-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-foreground);
+    margin-bottom: 0.5rem;
+}
+
+.location-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-muted);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.map-container {
+    width: 100%;
+    /* Visina mape se automatski podešava pomoću iframe height */
+    overflow: hidden; 
+    border-radius: var(--radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.map-container iframe {
+    /* Osigurava da je mapa potpuno responsivna unutar kontejnera */
+    display: block;
+}
+
+.address-info {
+    font-size: var(--font-size-lg);
+    color: var(--color-foreground);
+    line-height: 1.6;
+}
+
+.address-info strong {
+    color: var(--color-primary); /* Akcentovanje naslova adrese crvenom bojom */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS for Map Section --- */
+
+@media (min-width: 768px) {
+    .location-section {
+        padding: 7rem 0;
+    }
+    .map-container iframe {
+        height: 550px; /* Povećavamo visinu na većim ekranima */
+    }
+}
+
+
+
+/* --- FOOTER SECTION STYLES (NOVO) --- */
+
+.main-footer {
+    /* Tamna pozadina kao na slici */
+    background-color: #1a1a1a; 
+    color: #f0f0f0;
+    padding: 4rem 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    /* 1 kolona na mobilnom */
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center; /* Centriranje kolona na mobilnom */
+    padding-bottom: 3rem;
+}
+
+/* Prva kolona - Kontakt informacije */
+.footer-info {
+    margin-bottom: 2rem;
+}
+
+.footer-logo .logo-img {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    /* Dodajemo filter da bi tamni logo ostao vidljiv na tamnoj pozadini */
+    filter: invert(0.8) brightness(1.2); 
+}
+
+.footer-contact {
+    margin: 0.5rem 0;
+    font-size: var(--font-size-base);
+}
+
+.footer-contact strong {
+    color: #d1d1d1;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    color: #f0f0f0;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--color-primary); /* Akcentovanje crvenom na hover */
+}
+
+/* Kolone sa linkovima */
+.footer-links-group {
+    /* Uklanjamo naslov menija, jer na slici stoje samo dugmad */
+    display: none; 
+}
+
+/* Stilizacija dugmadi (linkova) */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    gap: 0.75rem;
+    align-items: center; /* Centriranje na mobilnom */
+}
+
+.footer-link-btn {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    background-color: #333333; /* Tamno siva pozadina za dugmad */
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    min-width: 180px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.footer-link-btn:hover {
+    background-color: var(--color-primary); /* Crvena boja na hover */
+    color: white;
+}
+
+/* Primarno dugme (npr. Početna) */
+.footer-link-btn.primary-bg {
+    background-color: var(--color-primary);
+}
+
+.footer-link-btn.primary-bg:hover {
+    background-color: #b91c1c;
+}
+
+
+/* Copyright traka */
+.copyright-bar {
+    padding: 1.5rem 1rem;
+    border-top: 1px solid #333333;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999999;
+    margin-top: 2rem;
+}
+
+.copyright-bar p {
+    margin: 0.5rem 0;
+}
+
+.creator-link {
+    color: var(--color-primary); /* Crvena boja za link kreatora */
+    text-decoration: none;
+}
+
+.creator-link:hover {
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS for Footer --- */
+
+/* Tablet (640px) */
+@media (min-width: 640px) {
+    .footer-grid {
+        /* 3 kolone na tabletu/desktopu */
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left; /* Poravnavanje kolona lijevo */
+    }
+    
+    .footer-links-group {
+        display: block; /* Prikazujemo grupe linkova */
+    }
+
+    .footer-logo {
+        margin-right: auto;
+    }
+    
+    .footer-links-list {
+        align-items: flex-start; /* Poravnavanje dugmadi lijevo */
+    }
+
+    .footer-logo .logo-img {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .main-footer {
+        padding: 5rem 0 0;
+    }
+}
