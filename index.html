@@ -3,236 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judo Klub Una Bihać - Home</title>
-
-    <!----------    CSS Poveznice    ---------->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Judo Klub Una Bihać - Početna</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
                 <!-- Logo -->
-                <div class="nav-logo">
-                    <img src="img/logo.jpg" alt="Logo" class="logo-img">
-                </div>
+                <a href="/" class="logo">
+                    <span class="logo-primary">Judo Klub</span>
+                    <span class="logo-secondary">Una Bihać</span>
+                </a>
 
-                <!-- Desktop Navigacija -->
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Početna</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="onama.html" class="nav-link dropdown-toggle">
-                            O nama
-                            <i class="dropdown-arrow">▼</i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="historija-juda.html" class="dropdown-link">Historija Juda</a></li>
-                            <li><a href="historija-kluba.html" class="dropdown-link">Historija Kluba</a></li>
-                            <li><a href="blackbelts.html" class="dropdown-link">BlackBelts</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="galerija.html" class="nav-link">Galerija</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Novosti</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="una-kup.html" class="nav-link">Una Kup</a>
-                    </li>
-                </ul>
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="/" class="nav-link">Početna</a>
+                    <a href="/o-nama" class="nav-link">O Nama</a>
+                    <a href="/treninzi" class="nav-link">Treninzi</a>
+                    <a href="/takmicenja" class="nav-link">Takmičenja</a>
+                    <a href="/galerija" class="nav-link">Galerija</a>
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                </nav>
 
-                <!-- Izbor jezika -->
-                <div class="language-selector">
-                    <select class="lang-select">
-                        <option value="bs" selected>BS</option>
-                        <option value="en">EN</option>
-                        <option value="de">DE</option>
-                    </select>
-                </div>
-
-                <!-- Mobilni Hamburger -->
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                <!-- Right Actions -->
+                <div class="header-actions">
+                    <button class="icon-btn" aria-label="Search">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button class="icon-btn theme-toggle" aria-label="Toggle theme">
+                        <svg class="icon sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg class="icon moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <button class="icon-btn hamburger" aria-label="Toggle menu">
+                        <svg class="icon menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="icon close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </nav>
+        </div>
+    </header>
 
-        <!-- Glavni dio Headera -->
-        <main class="main-content">
-        <!-- Replaced demo content with judo club hero section -->
-            <section class="hero-section">
-                <div class="hero-container">
-                    <div class="hero-content">
-                        <div class="hero-badge">
-                            Osnovan 1985. godine
-                        </div>
-                        
-                        <h1 class="hero-title"> Judo Klub<br>Una Bihać </h1>
-                        
-                        <!-- Added mobile image placement between title and description -->
-                        <div class="hero-image-mobile">
-                            <img src="img/header-img.png" alt="Judo trening" class="judo-image">
-                            <div class="achievement-badge">
-                                <div class="trophy-icon">🏆</div>
-                                <div class="achievement-text">
-                                    <div class="achievement-title">Državni prvaci</div>
-                                    <div class="achievement-year">2023. godina</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <p class="hero-description">
-                            Pridružite se našoj judo porodici i otkrijte snagu, disciplinu i duh borbe koji judo donosi. Naš klub postoji već 25 godina i ponosan je na svoje uspjehe.
-                        </p>
-                        
-                        <div class="hero-buttons">
-                            <button class="btn-primary">Počni svoju judo priču</button>
-                            <button class="btn-secondary">Saznaj više</button>
-                        </div>
-                        
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">150+</div>
-                                <div class="stat-label">Aktivnih članova</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">38</div>
-                                <div class="stat-label">Godina tradicije</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">25+</div>
-                                <div class="stat-label">Osvojenih medalja</div>
-                            </div>
-                        </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="/" class="mobile-link">Početna</a>
+            <a href="/o-nama" class="mobile-link">O Nama</a>
+            <a href="/treninzi" class="mobile-link">Treninzi</a>
+            <a href="/takmicenja" class="mobile-link">Takmičenja</a>
+            <a href="/galerija" class="mobile-link">Galerija</a>
+            <a href="/kontakt" class="mobile-link">Kontakt</a>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Video Background Placeholder -->
+        <div class="hero-background">
+            <div class="video-placeholder">
+                <svg class="video-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <p class="video-text">
+                    Video će biti dodan ovdje<br>
+                    (Dodajte video element sa position: absolute)
+                </p>
+            </div>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-inner">
+                    <p class="hero-subtitle">Tradicija, Disciplina, Izvrsnost</p>
+                    <h1 class="hero-title">
+                        OTKRIJTE SNAGU<br>
+                        <span class="text-primary">JUDA</span> DANAS
+                    </h1>
+                    <p class="hero-description">
+                        Pridružite se renomiranom Judo Klubu Una Bihać i razvijte svoje vještine kroz posvećeni trening, timski duh i sportsku izvrsnost.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="/o-nama" class="btn btn-primary">Saznaj Više</a>
                     </div>
-                    
-                    <!-- Updated image source and kept desktop version -->
-                    <div class="hero-image">
-                        <img src="img/header-img.png" alt="Judo trening" class="judo-image">
-                        <div class="achievement-badge">
-                            <div class="trophy-icon">🏆</div>
-                            <div class="achievement-text">
-                                <div class="achievement-title">Državni prvaci</div>
-                                <div class="achievement-year">2023. godina</div>
-                            </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">25+</div>
+                            <p class="stat-label">Godina Tradicije</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">200+</div>
+                            <p class="stat-label">Aktivnih Članova</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <p class="stat-label">Osvojenih Medalja</p>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-    </header>
+            </div>
+        </div>
 
-    
-    <!-- Zasto izabrati Judo -->
-    <section class="why-choose-section">
-        <div class="container">
-            <h2 class="section-title">Zašto odabrati <span class="highlight">Judo?</span>?</h2>
-            <p class="section-description">
-                Judo je sport koji razvija tijelo i um. Kroz trening jačaš snagu, kondiciju i ravnotežu, a učiš i 
-                korisne vještine samoodbrane. Osim fizičke spremnosti, judo njeguje disciplinu, samopouzdanje i 
-                poštovanje prema drugima. Pogodan je za sve uzraste, nudi sigurno učenje padova i pruža priliku da 
-                budeš dio zajednice koja podržava i motiviše.
-            </p>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    
-
-    
-
-
-    <!-- Footer sve i responzivno -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <!-- Logo and Description -->
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <!-- Added full club logo image -->
-                        <img src="img/logo.jpg" alt="Judo Klub Una Logo" class="footer-logo-img">
-                        <div class="footer-logo-text-container">
-                            <span class="footer-logo-text">Judo Klub Una Bihać</span>
-                        </div>
-                    </div>
-                    <!-- Extended description text -->
-                    <p class="footer-description">
-                        Snaga, disciplina i tradicija od 1985. godine. Naš klub je posvećen razvoju mladih sportista kroz vrijednosti juda i kontinuirani rad na usavršavanju tehnike i karaktera.
-                    </p>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-section">
-                    <h3 class="footer-title">Kontakt</h3>
-                    <div class="footer-contact">
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <span>Bihać, Bosna i Hercegovina</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">🕐</span>
-                            <span>Pon-Pet: 17:00-20:00</span>
-                        </div>
-                        <!-- Added email contact -->
-                        <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <a href="mailto:jkunabihac@gmail.com">judoklubunabihac@gmail.com</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Social media links -->
-                    <div class="social-media">
-                        <h4 class="social-title">Pratite nas</h4>
-                        <div class="social-links">
-                            <a href="#" class="social-link facebook" aria-label="Facebook">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-link youtube" aria-label="YouTube">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-link instagram" aria-label="Instagram">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-4.358-.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.013-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.69.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Links - will be hidden on mobile -->
-                <!-- Added mobile-hidden class for quick links -->
-                <div class="footer-section footer-quick-links">
-                    <h3 class="footer-title">Brze veze</h3>
-                    <ul class="footer-links">
-                        <li><a href="onama.html">O klubu</a></li>
-                        <li><a href="galerija.html">Galerija</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="#lokacija">Lokacija</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>&copy; 2025 Judo Klub Una Bihać. Sva prava zadržana.</p>
-                </div>
-                <div class="footer-developer">
-                    <p>Made by <a href="https://www.kemalmesic.com" target="_blank" rel="noopener noreferrer">Kemal Mešić</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
