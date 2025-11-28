@@ -679,3 +679,367 @@ body {
 }
 
 
+/* --- WHY CHOOSE US SECTION STYLES (NOVO) --- */
+
+.why-choose-us {
+    padding: 5rem 0;
+    /* Koristimo Accent boju iz tvoje teme za svetlu pozadinu */
+    background-color: var(--color-accent); 
+    text-align: center;
+}
+
+.dark .why-choose-us {
+    /* U tamnom modu ostavljamo tamnu pozadinu */
+    background-color: var(--color-background); 
+}
+
+/* Header */
+.why-header {
+    margin-bottom: 3.5rem;
+}
+
+.why-subtitle {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+}
+
+.dark .why-subtitle {
+    color: #a3a3a3;
+}
+
+.why-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    /* Koristimo primarnu boju za naglašeni naslov */
+    color: var(--color-primary); 
+    line-height: 1.1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* Sadržaj (Slike + Tekst) */
+.why-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.why-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark .why-image-wrapper {
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.why-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    transition: transform var(--transition);
+}
+
+.why-image:hover {
+    transform: scale(1.05);
+}
+
+.item-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin-bottom: 1rem;
+}
+
+.item-description {
+    font-size: var(--font-size-base);
+    color: var(--color-muted);
+    line-height: 1.6;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.dark .item-description {
+    color: #a3a3a3;
+}
+
+/* CTA Link */
+.why-cta {
+    margin-top: 2rem;
+}
+
+.cta-link {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--radius);
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.cta-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS for Why Choose Us --- */
+
+/* Tablet (640px) */
+@media (min-width: 640px) {
+    .why-title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .why-grid {
+        /* Prelazimo na raspored sa 2 kolone */
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .why-item {
+        width: calc(50% - 1rem); /* Dvije kolone sa razmakom */
+    }
+    
+    .why-image-wrapper {
+        height: 250px; /* Fiksna visina za slike na tabletu/desktopu */
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .why-choose-us {
+        padding: 7rem 0;
+    }
+    
+    .why-grid {
+        gap: 4rem;
+    }
+    
+    .why-item {
+        width: calc(50% - 2rem); 
+    }
+    
+    .why-image-wrapper {
+        height: 300px;
+    }
+}
+
+
+
+/* --- OUR TEAM SECTION STYLES (NOVO) --- */
+
+.team-showcase {
+    padding: 5rem 0;
+    /* Tražena bela pozadina */
+    background-color: #ffffff; 
+    text-align: center;
+}
+
+.dark .team-showcase {
+    /* U tamnom modu zadržavamo tamnu pozadinu */
+    background-color: var(--color-background);
+}
+
+.team-header-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--color-foreground);
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* Tab Navigation (Gornji tabovi sa imenima) */
+.team-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-tab {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    border-radius: 50px; /* Okrugli tabovi */
+    transition: background-color var(--transition), color var(--transition);
+    
+    /* Default (Inactive) State */
+    background-color: var(--color-accent);
+    color: var(--color-foreground);
+}
+
+.dark .team-tab {
+    background-color: #262626;
+    color: #fafafa;
+}
+
+/* Active Tab State */
+.team-tab.active {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+}
+
+.dark .team-tab.active {
+    background-color: #fafafa;
+    color: #171717;
+}
+
+/* Content Area */
+.team-content-wrapper {
+    position: relative;
+    min-height: 500px; /* Minimalna visina da se sadržaj ne pomera */
+}
+
+.coach-profile {
+    display: none; /* Sakriveno po defaultu */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.coach-profile.active {
+    display: block;
+    opacity: 1;
+    position: relative;
+}
+
+/* Coach Grid */
+.coach-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.coach-image-container {
+    width: 100%;
+    max-width: 300px; /* Ograničavanje slike na mobilnom */
+    height: auto;
+}
+
+.coach-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+}
+
+.coach-bio-card {
+    background-color: var(--color-accent);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    max-width: 500px;
+    text-align: left;
+}
+
+.dark .coach-bio-card {
+    background-color: #171717;
+}
+
+.bio-name {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.bio-title {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.bio-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.bio-list li {
+    font-size: var(--font-size-base);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+    color: var(--color-muted);
+}
+
+.dark .bio-list li {
+    color: #a3a3a3;
+}
+
+.bio-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS for Team Showcase --- */
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .team-showcase {
+        padding: 7rem 0;
+    }
+
+    .coach-grid {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .coach-image-container {
+        max-width: 350px;
+        flex-shrink: 0;
+    }
+    
+    .coach-bio-card {
+        padding: 2.5rem;
+        flex: 1; /* Bio kartica zauzima ostatak prostora */
+        max-width: 500px;
+    }
+}
+
+
+
