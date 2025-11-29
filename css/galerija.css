@@ -1,0 +1,178 @@
+/*
+ * ========================================
+ * GALERIJA.CSS - STILOVI SPECIFIČNI ZA GALERIJU
+ * NAPOMENA: Stilovi za NAVBAR i VIDEO MORAJU biti u styles.css
+ * ========================================
+ */
+
+/* --- HEADER I SUBHEADER STILOVI (Samo tekstualni dio) --- */
+
+.gallery-page-header {
+    /* Samo dodatni padding za sekciju, pozadina se preuzima iz styles.css */
+    padding: 6rem 0 3rem;
+    text-align: center;
+}
+
+.gallery-main-title {
+    /* Pretpostavljene varijable iz styles.css */
+    font-size: var(--font-size-4xl); 
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: 3rem;
+}
+
+
+/* --- GALERIJA - FILTERI/KATEGORIJE --- */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 3rem; 
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-border);
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.filter-btn:hover:not(.active) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+
+/* --- GALERIJA GRID (Kontejner za slike) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 1.5rem; 
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.5s;
+}
+
+.gallery-item.hidden-row {
+    display: none;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1 / 1; 
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+
+/* --- DUGME "VIDI VIŠE" --- */
+.load-more-container {
+    text-align: center; 
+    padding: 3rem 0; 
+}
+
+#load-more-btn {
+    padding: 1rem 3rem; 
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--color-primary); 
+    color: white; 
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#load-more-btn:hover {
+     background-color: #b91c1c;
+}
+
+
+/* --- MODAL (Lightbox) STYLES --- */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000; 
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    max-height: 90vh;
+    object-fit: contain; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+/* Strelica za prethodnu/sledeću sliku */
+.prev-btn, .next-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2001;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* --- RESPONZIVNOST GALERIJE --- */
+@media (min-width: 768px) {
+     .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+}
+
+@media (min-width: 1024px) {
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+}
