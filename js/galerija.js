@@ -1,149 +1,145 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // --- FILTRIRANJE I "VIDI VIŠE" LOGIKA ---
+document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. GALERIJA FILTER LOGIKA ---
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
     const loadMoreBtn = document.getElementById('load-more-btn');
-    const itemsPerRow = 4;
-    const initialRows = 3; 
-    
-    let allGalleryItems = Array.from(document.querySelectorAll('.gallery-item'));
-    let currentFilter = 'all';
+    const hiddenItems = document.querySelectorAll('.gallery-item.hidden-row');
+    const itemsPerRow = 4; // Pretpostavljamo 4 kolone za desktop
 
-    const updateVisibility = (filter) => {
-        let itemsToShow = [];
+    // Inicijalno sakrivanje svih hidden-row elemenata
+    hiddenItems.forEach(item => item.style.display = 'none');
 
-        // 1. Filtriranje elemenata
-        allGalleryItems.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            const isMatch = (filter === 'all' || filter === itemCategory);
-
-            item.style.display = 'none';
-            item.classList.add('hidden-row'); 
-
-            if (isMatch) {
-                itemsToShow.push(item);
-            }
-        });
-        
-        // 2. Prikaz prve tri reda (12 slika)
-        itemsToShow.forEach((item, index) => {
-            if (index < initialRows * itemsPerRow) {
-                 item.style.display = 'block';
-                 item.classList.remove('hidden-row');
-            } else {
-                 item.classList.add('hidden-row');
-                 item.removeAttribute('data-visible');
-            }
-        });
-        
-        // 3. Ažuriranje dugmeta "Vidi Više"
-        const visibleCount = itemsToShow.length - itemsToShow.filter(item => item.classList.contains('hidden-row')).length;
-
-        if (itemsToShow.length > visibleCount) {
+    // Funkcija za primenu filtera
+    const applyFilter = (filter) => {
+        // Resetujemo dugme "Vidi Više"
+        if (loadMoreBtn) {
             loadMoreBtn.style.display = 'block';
-        } else {
-            loadMoreBtn.style.display = 'none';
+        }
+
+        galleryItems.forEach(item => {
+            const category = item.dataset.category;
+            const isHiddenRow = item.classList.contains('hidden-row');
+
+            // Sakrivanje svih slika na početku filtriranja
+            item.style.display = 'none';
+
+            if (filter === 'all' || category === filter) {
+                // Prikazujemo samo one koje NISU 'hidden-row' ili one koje su u prva tri reda
+                if (!isHiddenRow) {
+                    item.style.display = 'block';
+                    item.classList.add('visible');
+                } else {
+                    // Ako su sakriveni redovi, provjeravamo da li se uopšte pojavljuju
+                    // Ako nema skrivenih redova u trenutnom filteru, sakrivamo dugme "Vidi Više"
+                    const remainingHidden = document.querySelectorAll(`.gallery-item.hidden-row[data-category="${filter}"]`);
+                    if (filter !== 'all' && remainingHidden.length === 0) {
+                        if (loadMoreBtn) {
+                            loadMoreBtn.style.display = 'none';
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Provera da li ima preostalih skrivenih slika za "all" kategoriju
+        if (filter === 'all' && hiddenItems.length === 0) {
+             if (loadMoreBtn) {
+                loadMoreBtn.style.display = 'none';
+            }
         }
     };
 
 
+    // Event listeneri za filter dugmad
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+            // Ažuriraj aktivno dugme
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            currentFilter = button.getAttribute('data-filter');
-            updateVisibility(currentFilter);
+            const filter = button.dataset.filter;
+            applyFilter(filter);
         });
     });
 
-    loadMoreBtn.addEventListener('click', () => {
-        let itemsToLoad = itemsPerRow;
-        let stillHidden = 0;
-
-        allGalleryItems.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            const isMatch = (currentFilter === 'all' || currentFilter === itemCategory);
+    // --- 2. LOGIKA "VIDI VIŠE" ---
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
             
-            if (isMatch && item.classList.contains('hidden-row') && itemsToLoad > 0) {
+            // Pronađi sve trenutno skrivene slike za aktivni filter
+            const currentlyHidden = Array.from(galleryItems).filter(item => {
+                const category = item.dataset.category;
+                const isHidden = item.classList.contains('hidden-row');
+                const isVisible = item.style.display === 'block'; 
+
+                return isHidden && !isVisible && (activeFilter === 'all' || category === activeFilter);
+            });
+
+            // Odredi koliko slika da prikaže (npr. 4, što je jedan red)
+            const toShow = currentlyHidden.slice(0, itemsPerRow);
+
+            toShow.forEach(item => {
+                // Prikazivanje sa fade-in efektom
                 item.style.display = 'block';
-                item.classList.remove('hidden-row');
-                itemsToLoad--;
-            } else if (isMatch && item.classList.contains('hidden-row')) {
-                stillHidden++;
+                setTimeout(() => item.style.opacity = '1', 10);
+                item.classList.remove('hidden-row'); // Uklanjamo klasu da ne budu više 'hidden'
+            });
+
+            // Sakrij dugme ako više nema skrivenih slika
+            if (currentlyHidden.length <= itemsPerRow) {
+                loadMoreBtn.style.display = 'none';
             }
         });
-
-        if (stillHidden === 0) {
-            loadMoreBtn.style.display = 'none';
-        }
-    });
-    
-    // Inicijalno učitavanje
-    updateVisibility('all');
+    }
 
 
-    // --- MODALNI PRIKAZ SLIKE (Lightbox) ---
+    // --- 3. MODAL / LIGHTBOX LOGIKA ---
     const modal = document.getElementById('image-modal');
-    const modalImage = document.getElementById('modal-image');
+    const modalImg = document.getElementById('modal-image');
     const closeBtn = document.querySelector('.close-btn');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     let currentImageIndex = 0;
-    
-    const getVisibleImages = () => {
-        return Array.from(document.querySelectorAll('.gallery-item:not(.hidden-row):not([style*="none"]) img'));
+    let visibleImages = []; // Lista trenutno prikazanih slika
+
+    // Otvori modal
+    const openModal = (item, index) => {
+        modal.style.display = 'block';
+        modalImg.src = item.querySelector('img').src;
+        currentImageIndex = index;
     };
 
-    document.querySelector('.gallery-grid').addEventListener('click', function(e) {
-        if (e.target.tagName === 'IMG') {
-            const allImages = getVisibleImages();
-            
-            currentImageIndex = allImages.findIndex(img => img.src === e.target.src);
-            
-            modal.style.display = 'block';
-            modalImage.src = e.target.src;
-        }
-    });
-
-    closeBtn.onclick = function() {
+    // Zatvori modal
+    closeBtn.onclick = () => {
         modal.style.display = 'none';
     };
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
+    window.onclick = (event) => {
+        if (event.target === modal) {
             modal.style.display = 'none';
         }
     };
-    
-    const showImage = (index) => {
-        const images = getVisibleImages();
-        
-        if (images.length === 0) return;
-        
-        if (index >= images.length) {
-            currentImageIndex = 0;
-        } else if (index < 0) {
-            currentImageIndex = images.length - 1;
-        } else {
-            currentImageIndex = index;
-        }
-        
-        modalImage.src = images[currentImageIndex].src;
+
+    // Navigacija
+    const navigate = (direction) => {
+        currentImageIndex = (currentImageIndex + direction + visibleImages.length) % visibleImages.length;
+        modalImg.src = visibleImages[currentImageIndex].querySelector('img').src;
     };
+    prevBtn.onclick = () => navigate(-1);
+    nextBtn.onclick = () => navigate(1);
 
-    prevBtn.onclick = () => showImage(currentImageIndex - 1);
-    nextBtn.onclick = () => showImage(currentImageIndex + 1);
-
-    document.addEventListener('keydown', function(e) {
-        if (modal.style.display === 'block') {
-            if (e.key === "Escape") {
-                modal.style.display = 'none';
-            } else if (e.key === "ArrowLeft") {
-                showImage(currentImageIndex - 1);
-            } else if (e.key === "ArrowRight") {
-                showImage(currentImageIndex + 1);
+    // Event listeneri za svaku sliku u galeriji
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            // Ažuriraj listu vidljivih slika pre otvaranja modala
+            visibleImages = Array.from(document.querySelectorAll('.gallery-item')).filter(i => i.style.display === 'block');
+            const clickedIndex = visibleImages.indexOf(item);
+            if (clickedIndex !== -1) {
+                openModal(item, clickedIndex);
             }
-        }
+        });
     });
+
+    // Inicijalno primeni 'all' filter da bi se sve vidljive slike ispravno postavile
+    applyFilter('all');
 });

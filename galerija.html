@@ -66,25 +66,63 @@
     <div class="mobile-overlay"></div>
 
     <main>
-        <section class="gallery-page-header">
-            <div class="container">
-                <h1 class="gallery-main-title">FOTOGALERIJA I VIDEO</h1>
-                <p class="gallery-subtitle">Pogledajte najbolje momente sa naših treninga, takmičenja i događaja u slikama i videu.</p>
+        <section class="hero gallery-hero">
+            <div class="hero-background">
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="img/header.mp4" type="video/mp4">
+                    <source src="img/video.webm" type="video/webm">
+                    Vaš pretraživač ne podržava video.
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
 
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                        title="Judo Klub Una Bihać Video" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+            <div class="hero-content">
+                <div class="container">
+                    <h1 class="gallery-main-title">NAŠA <span class="text-primary">GALERIJA</span></h1>
+                    <p class="gallery-subtitle">Pogledajte najbolje momente sa naših treninga, takmičenja, kata, seminara i polaganja.</p>
                 </div>
-                
-                </div>
+            </div>
         </section>
         
-        </main>
+        <section class="gallery-filters-section">
+            <div class="container">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Sve</button>
+                    <button class="filter-btn" data-filter="ourteam">Naš Tim</button>
+                    <button class="filter-btn" data-filter="competition">Takmičenja</button>
+                    <button class="filter-btn" data-filter="seminars">Seminari</button>
+                    <button class="filter-btn" data-filter="kata">Kata</button>
+                    <button class="filter-btn" data-filter="polaganja">Polaganje</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-content">
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="ourteam"><img src="img/galerija/nastim/tim1.jpg" alt="Naši najiskusniji majstori"></div>
+                <div class="gallery-item" data-category="ourteam"><img src="img/galerija/nastim/tim4.jpg" alt="Džudo trening 2"></div>
+                <div class="gallery-item" data-category="competition"><img src="img/galerija/takmicenje/takmicenje3.jpg" alt="Elma u akciji"></div>
+                <div class="gallery-item" data-category="polaganja"><img src="img/galerija/polaganje/polaganje1.jpg" alt="Polaganje pojasa 1"></div>
+                <div class="gallery-item" data-category="ourteam"><img src="img/galerija/nastim/tim3.jpg" alt="Džudo trening 3"></div>
+                <div class="gallery-item" data-category="competition"><img src="img/galerija/takmicenje/takmicenje4.jpg" alt="Takmičenje 2"></div>
+                <div class="gallery-item" data-category="seminars"><img src="img/galerija/kata/kata3.jpg" alt="Seminar 1"></div>
+                <div class="gallery-item" data-category="kata"><img src="img/galerija/kata/kata4.jpg" alt="Kata 1"></div>
+                <div class="gallery-item" data-category="ourteam"><img src="img/galerija/nastim/tim2.jpg" alt="Džudo trening 4"></div>
+                <div class="gallery-item" data-category="competition"><img src="img/galerija/takmicenje/takmicenje7.jpg" alt="Takmičenje 3"></div>
+                <div class="gallery-item" data-category="polaganja"><img src="img/galerija/polaganje/polaganje4.jpg" alt="Polaganje pojasa 2"></div>
+                <div class="gallery-item" data-category="kata"><img src="img/galerija/kata/kata6.jpg" alt="Kata 2"></div>
+
+                <div class="gallery-item hidden-row" data-category="ourteam"><img src="img/galerija/nastim/tim3.jpg" alt="Džudo trening 5"></div>
+                <div class="gallery-item hidden-row" data-category="competition"><img src="img/galerija/takmicenje/takmicenje6.jpg" alt="Takmičenje 4"></div>
+                <div class="gallery-item hidden-row" data-category="seminars"><img src="img/galerija/kata/kata1.jpg" alt="Seminar 3"></div>
+                <div class="gallery-item hidden-row" data-category="polaganja"><img src="img/galerija/polaganje/polaganje3.jpg" alt="Polaganje pojasa 3"></div>
+            </div>
+            
+            <div class="load-more-container">
+                 <button id="load-more-btn" class="load-more-btn-style">Vidi Više</button>
+            </div>
+        </section>
+    </main>
     
     <div id="image-modal" class="modal">
         <span class="close-btn">&times;</span>
