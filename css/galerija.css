@@ -1,16 +1,14 @@
 /*
  * ========================================
  * GALERIJA.CSS - STILOVI SPECIFIČNI ZA GALERIJU
- * (Koriste se varijable za Light/Dark mod iz styles.css)
  * ========================================
  */
 
-/* --- HERO/VIDEO SEKCIJA (TEKST PREKO VIDEA) --- */
+/* --- HERO/VIDEO SEKCIJA --- */
 
 .gallery-hero {
     min-height: 80vh; 
     position: relative;
-    /* Hero-background, hero-overlay, hero-video stilovi su u styles.css */
 }
 
 .gallery-hero .hero-content {
@@ -41,7 +39,7 @@
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-/* --- SEKCIJA FILTERA (Ispod Hero-a) --- */
+/* --- SEKCIJA FILTERA --- */
 
 .gallery-filters-section {
     background-color: var(--color-background);
@@ -85,7 +83,7 @@
 }
 
 
-/* --- GALERIJA GRID (Kontejner za slike) --- */
+/* --- GALERIJA GRID --- */
 .gallery-content {
     background-color: var(--color-background);
     padding: 3rem 0;
@@ -132,28 +130,20 @@
 }
 
 
-/* --- DUGME "VIDI VIŠE" (Smanjeno i centrirano) --- */
-/* --- DUGME "VIDI VIŠE" (Ispravljeno centriranje pomoću Flexboxa) --- */
+/* --- DUGME "VIDI VIŠE" --- */
 .load-more-container {
-    /* Korišćenje Flexboxa za apsolutno centriranje */
-    display: flex;
-    justify-content: center; /* Centriranje horizontalno */
+    display: flex; /* Flexbox za centriranje */
+    justify-content: center; 
     align-items: center;
     padding: 4rem 0 6rem;
-    width: 100%; /* Osigurava da zauzima celu širinu i može centrirati */
 }
 
 .load-more-btn-style {
-    /* Zadržavamo inline-flex za lepo poravnanje teksta i ikone (ako je dodamo) */
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    
-    /* Smanjene dimenzije (prethodne ispravke) */
     padding: 0.8rem 2.5rem; 
     font-size: var(--font-size-base);
-    
-    /* Ostali stilovi */
     border: none;
     border-radius: 50px;
     background-color: var(--color-primary); 
@@ -176,26 +166,38 @@
 }
 
 
-/* --- MODAL (Lightbox) STYLES --- */
+/* --- MODAL (Lightbox) STYLES - ISPRAVLJENO --- */
 
 .modal {
+    /* DEFAULT: Sakriveno */
     display: none; 
     position: fixed;
     z-index: 2000; 
-    padding-top: 50px; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.95);
+    /* Flexbox svojstva za centriranje, ali aktivna samo kada je is-open */
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* KONTROLA VIDLJIVOSTI POMOĆU JS KLASE */
+.modal.is-open {
+    display: flex; 
 }
 
 .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 900px;
-    max-height: 90vh;
+    /* Centriranje unutar flex kontejnera */
+    margin: 0; 
+    display: block; 
+    flex-shrink: 1; 
+    flex-grow: 0;
+
+    width: auto; 
+    max-width: 90%; 
+    max-height: 90vh; 
     object-fit: contain; 
 }
 
@@ -234,14 +236,12 @@
 @media (max-width: 1024px) {
     .gallery-hero { min-height: 65vh; }
     .gallery-main-title { font-size: var(--font-size-4xl); }
-    /* Prilagođavanje filtera na tabletu */
     .gallery-filters { justify-content: center; padding: 0 0.5rem; }
     .filter-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
 }
 
 @media (min-width: 768px) {
      .gallery-grid { 
-        /* Tri kolone na tabletu */
         grid-template-columns: repeat(3, 1fr); 
         gap: 2rem; 
     }
@@ -249,7 +249,6 @@
 
 @media (min-width: 1024px) {
     .gallery-grid { 
-        /* Četiri kolone na desktopu */
         grid-template-columns: repeat(4, 1fr); 
     }
 }
@@ -258,7 +257,6 @@
     .gallery-main-title { font-size: var(--font-size-3xl); }
     .gallery-subtitle { font-size: var(--font-size-base); }
     .gallery-grid { 
-        /* Dve kolone na mobilnim uređajima */
         grid-template-columns: repeat(2, 1fr); 
         gap: 1rem; 
     }
