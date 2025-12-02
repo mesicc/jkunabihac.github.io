@@ -229,6 +229,7 @@ body {
   padding: 0.75rem 1rem;
   border-radius: var(--radius);
   transition: background-color var(--transition), color var(--transition);
+  display: block; /* dodano za historija.html da se prikazuje mobilni navbar kako treba */
 }
 
 .mobile-link:hover {

@@ -1,0 +1,66 @@
+/* --- HISTORIJA.CSS --- */
+
+/* --- HERO SEKCIJA (NASLOV STRANICE I POZADINA) --- */
+
+.page-hero {
+    /* Uklanjamo fiksnu visinu (35vh) i postavljamo je da zauzme SVU raspoloživu visinu viewporta (100vh) */
+    height: 100vh; 
+    
+    /* Moramo oduzeti visinu fiksnog navbara (pretpostavimo da je 80px), da ne bi dobili vertikalni scrollbar */
+    /* Ako se vaš navbar ne skroluje sa stranicom, koristite ovo: */
+    height: calc(100vh - 80px); /* Podesite 80px na stvarnu visinu vašeg navbara */
+    
+    /* Osiguravamo da nema min-height ograničenja */
+    min-height: auto; 
+    
+    /* Stilovi za pozadinsku sliku ostaju isti */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Fleks centriranje sadržaja */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Prekrivajući sloj (overlay) za bolju čitljivost teksta */
+    position: relative;
+    z-index: 1;
+    
+    /* Dodatna margina za odvajanje od fiksnog navbara, ako se navbar ne preklapa */
+    /* Ako je navbar FIXIRAN na vrhu, ovo vam NE TREBA */
+    /* Ako navbar nije fiksiran, DODAJTE ovo: */
+    /* margin-top: 80px; */ 
+}
+
+/* Prekrivajući sloj (dark overlay) */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Malo tamniji overlay za bolji kontrast */
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    color: white; 
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 1); /* Jača senka za bolju vidljivost */
+    position: relative;
+    z-index: 3;
+    padding: 0 1rem;
+    text-transform: uppercase; 
+}
+
+/* Stil za veliku veličinu ekrana */
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: var(--font-size-5xl); /* Održavamo veliku veličinu na desktopu */
+    }
+}
+/* KRAJ HERO SEKCIJE STILOVA */
