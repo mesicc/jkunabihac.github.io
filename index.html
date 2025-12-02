@@ -545,53 +545,82 @@
     </section>
 
 
-    <footer class="main-footer">
-        <div class="container footer-grid">
-            
-            <div class="footer-col footer-info">
-                <div class="footer-logo">
-                    <img src="img/logo.jpg" alt="Logo kluba UNA class="logo-img">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-col footer-info">
+                    <a href="/" class="logo footer-logo">
+                        <img src="img/logo.jpg" class="footer-logo-img">
+                    </a>
+                    <p class="club-description">
+                        Judo Klub Una Bihać je mesto gde se tradicija susreće sa modernim treningom. Posvećeni smo razvoju sportista i promovišemo duh juda: poštovanje, disciplinu i prijateljstvo.
+                    </p>
+                    <p class="club-description">
+                        Pridružite nam se i postanite deo pobedničkog tima!
+                    </p>
                 </div>
-                <p class="footer-contact">Telefon: <strong>+387 61 123 456</strong></p>
-                <p class="footer-contact">E-mail: <strong>judoklubunabihac@gmail.com</strong></p>
+                <div class="footer-col footer-links-group">
+                    <h3 class="footer-links-title">Brzi Linkovi</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="/" class="footer-link">Početna</a></li>
+                        <li><a href="/o-nama" class="footer-link">O Nama</a></li>
+                        <li><a href="/blog" class="footer-link">Aktuelnosti</a></li>
+                        <li><a href="galerija.html" class="footer-link">Galerija</a></li>
+                        <li><a href="/kontakt" class="footer-link">Kontakt</a></li>
+                        <li><a href="#contact-section" class="footer-link">Prijavi se</a></li>
+                    </ul>
+                </div>
                 
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/judounabihac" class="social-link" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                    </a>
-                    <a href="https://www.instagram.com/judoklub.una.bihac" class="social-link" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-                    </a>
+                <div class="footer-col footer-contact-social">
+                    <h3 class="footer-links-title">Kontaktirajte Nas</h3>
+                    
+                    <div class="contact-details-group">
+                        <p class="footer-contact">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:18px; height:18px; margin-right:10px; vertical-align:middle;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243m0 0A7 7 0 1118 12a7 7 0 01-1.657 4.657z"/>
+                            </svg> 
+                            Drugi Prilaz ulici, Bosanskih šehida bb, Bihać 77000
+                        </p>
+                        <p class="footer-contact">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:18px; height:18px; margin-right:10px; vertical-align:middle;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg> 
+                            +387 61 123 456
+                        </p>
+                        <p class="footer-contact">
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:18px; height:18px; margin-right:10px; vertical-align:middle;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg> 
+                            info@judounabihac.com
+                        </p>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://facebook.com/judoklununabihac" target="_blank" aria-label="Facebook" class="social-icon-link">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.56 0-.654.218-.654.673v1.177h2l-.246 2h-1.754v7h-3v-7h-2v-2h2v-1.455c0-2.036 1.053-3.545 3.5-3.545h1.996v3.27z"/></svg>
+                        </a>
+                        <a href="https://instagram.com/judounabihac" target="_blank" aria-label="Instagram" class="social-icon-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-3.181 0-3.585.013-4.85.071-1.264.058-2.122.254-2.883.541-.74.275-1.393.667-2.046 1.32-.654.653-1.045 1.306-1.32 2.046-.287.761-.483 1.62-.541 2.883-.058 1.265-.071 1.669-.071 4.85s.013 3.585.071 4.85c.058 1.264.254 2.122.541 2.883.275.74.667 1.393 1.32 2.046.653.654 1.306 1.045 2.046 1.32.761.287 1.62.483 2.883.541 1.265.058 1.669.071 4.85.071s3.585-.013 4.85-.071c1.264-.058 2.122-.254 2.883-.541.74-.275 1.393-.667 2.046-1.32.654-.653 1.045-1.306 1.32-2.046.287-.761.483-1.62.541-2.883.058-1.265.071-1.669.071-4.85s-.013-3.585-.071-4.85c-.058-1.264-.254-2.122-.541-2.883-.275-.74-.667-1.393-1.32-2.046-.653-.654-1.306-1.045-2.046-1.32-.761-.287-1.62-.483-2.883-.541-1.265-.058-1.669-.071-4.85-.071zm0 1.936c3.167 0 3.558.013 4.819.071 1.171.054 1.761.242 2.155.394.394.152.654.346.945.637.292.292.485.552.637.945.152.394.34.984.394 2.155.058 1.261.071 1.652.071 4.819s-.013 3.558-.071 4.819c-.054 1.171-.242 1.761-.394 2.155-.152.394-.346.654-.637.945-.292.292-.552.485-.945.637-.394.152-.984.34-2.155.394-1.261.058-1.652.071-4.819.071s-3.558-.013-4.819-.071c-1.171-.054-1.761-.242-2.155-.394-.394-.152-.654-.346-.945-.637-.292-.292-.485-.552-.637-.945-.152-.394-.34-.984-.394-2.155-.058-1.261-.071-1.652-.071-4.819s.013-3.558.071-4.819c.054-1.171.242-1.761.394-2.155.152-.394.346-.654.637-.945.292-.292.552-.485.945-.637.394-.152.984-.34 2.155-.394 1.261-.058 1.652-.071 4.819-.071zm0 2.264c-3.111 0-5.634 2.523-5.634 5.634s2.523 5.634 5.634 5.634 5.634-2.523 5.634-5.634-2.523-5.634-5.634-5.634zm0 1.936c2.039 0 3.698 1.659 3.698 3.698s-1.659 3.698-3.698 3.698-3.698-1.659-3.698-3.698 1.659-3.698 3.698-3.698zm6.544-3.596c-.636 0-1.151.515-1.151 1.151s.515 1.151 1.151 1.151 1.151-.515 1.151-1.151-.515-1.151-1.151-1.151z"/></svg>
+                        </a>
+                        <a href="https://youtube.com/@judoklununabihac" target="_blank" aria-label="YouTube" class="social-icon-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.51 15.655l-1.613 1.053c-.309.202-.693.003-.693-.365v-2.022l-4.104 2.684c-.307.201-.693.001-.693-.365v-6.39c0-.365.386-.566.693-.365l4.104 2.684v-2.022c0-.368.384-.567.693-.365l1.613 1.053c.307.201.307.528 0 .729l-1.613 1.053v1.896l1.613 1.053c.307.201.307.528 0 .729zm-5.044-6.326c-.44-.288-.934-.339-1.428-.157-.493.181-.884.536-1.146.997-.262.46-.328.995-.213 1.516.114.522.408.977.834 1.303.427.326.942.482 1.455.457.513-.024.996-.217 1.385-.562.389-.345.656-.799.76-1.298.103-.5-.008-1.01-.295-1.45-.287-.441-.65-.796-1.127-1.006-.477-.209-.993-.244-1.503-.099-.51.144-.954.469-1.28.895-.326.426-.474.939-.427 1.455.047.516.297 1.002.723 1.328.426.326.982.477 1.536.429.554-.047 1.077-.28 1.464-.675.387-.395.637-.936.685-1.487.047-.552-.057-1.104-.326-1.554z"/></svg>
+                        </a>
+                    </div>
                 </div>
+
             </div>
 
-            <div class="footer-col footer-links-group">
-                <h3 class="footer-links-title">Meni</h3>
-                <ul class="footer-links-list"><br>
-                    <li><a href="#" class="footer-link-btn primary-bg">Početna</a></li>
-                    <li><a href="#" class="footer-link-btn">Aktuelnosti</a></li>
-                    <li><a href="#" class="footer-link-btn">Trening</a></li>
-                    <li><a href="#" class="footer-link-btn">Plaćanja</a></li>
-                    <li><a href="#" class="footer-link-btn">Događaji</a></li>
-                </ul>
+            <div class="copyright-bar">
+                <p>© <span id="current-year"></span> Judo Klub Una Bihać. Sva prava zadržana.</p>
+                <p>
+                    Created with 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--color-primary)" style="vertical-align: middle; margin-top: -2px;">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg> 
+                    by <a href="#" class="creator-link">Kemal Mešić</a>
+                </p>
             </div>
-
-            <div class="footer-col footer-links-group">
-                <h3 class="footer-links-title">Brzi Linkovi</h3>
-                <ul class="footer-links-list"><br>
-                    <li><a href="#" class="footer-link-btn">Plaćanja</a></li>
-                    <li><a href="#" class="footer-link-btn">Događaji</a></li>
-                    <li><a href="#" class="footer-link-btn">O Nama</a></li>
-                    <li><a href="#" class="footer-link-btn">Shop</a></li>
-                    <li><a href="#" class="footer-link-btn">Online Programi</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="copyright-bar">
-            <p>© 2025 Judo Klub Una Bihać. Sva prava zadržana.</p>
-            <p>Proudly created by <a href="#" class="kemalmesic.com">Kemal Mešić</a></p>
         </div>
     </footer>
 

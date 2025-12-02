@@ -1708,105 +1708,137 @@ body {
 
 
 
-/* --- FOOTER SECTION STYLES (NOVO) --- */
+/* --- FOOTER STYLES (AŽURIRANI LJEPŠI FOOTER - 3 KOLONE I IMG LOGO) --- */
 
-.main-footer {
-    /* Tamna pozadina kao na slici */
-    background-color: #1a1a1a; 
-    color: #f0f0f0;
-    padding: 4rem 0 0;
+.footer {
+    background-color: #171717;
+    color: #e5e5e5;
+    padding: 5rem 0 0;
 }
 
+.dark .footer {
+    background-color: var(--color-background); /* #0a0a0a */
+    color: var(--color-foreground); /* #fafafa */
+}
+
+/* Osnovni Grid za footer - 1 kolona na mobilnom */
 .footer-grid {
     display: grid;
-    /* 1 kolona na mobilnom */
     grid-template-columns: 1fr;
     gap: 3rem;
-    text-align: center; /* Centriranje kolona na mobilnom */
+    text-align: center; 
     padding-bottom: 3rem;
 }
 
-/* Prva kolona - Kontakt informacije */
+/* Prva kolona: Logo i Opis */
 .footer-info {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
-.footer-logo .logo-img {
-    max-width: 150px;
+/* Stil za IMG logo */
+.footer-logo {
+    display: inline-block; /* Za centriranje bloka na mobilnom */
+    margin-bottom: 1rem;
+    /* Linija ispod loga */
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-primary); 
+}
+
+.footer-logo-img {
+    max-width: 150px; /* Maksimalna širina loga */
     height: auto;
-    margin: 0 auto 1.5rem;
-    /* Dodajemo filter da bi tamni logo ostao vidljiv na tamnoj pozadini */
-    filter: invert(0.8) brightness(1.2); 
+    display: block; /* Važno za centriranje unutar inline-blocka na mobilnom */
+    margin: 0 auto; /* Centriranje slike loga na mobilnom */
+}
+
+/* Uklanjanje starih stilova za tekstualni logo */
+.footer-logo .logo-primary, 
+.footer-logo .logo-secondary {
+    display: none; 
+}
+
+
+.club-description {
+    font-size: var(--font-size-base);
+    color: #a3a3a3;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+/* Druga kolona: Linkovi */
+.footer-links-group {
+    text-align: center;
+}
+
+.footer-links-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-link {
+    color: #a3a3a3;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    display: inline-block;
+    transition: color var(--transition), transform 0.2s ease-out;
+}
+
+.footer-link:hover {
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+/* Treća kolona: Kontakt Detalji i Društvene mreže */
+.footer-contact-social {
+    text-align: center;
 }
 
 .footer-contact {
-    margin: 0.5rem 0;
+    margin: 0.75rem 0;
     font-size: var(--font-size-base);
-}
-
-.footer-contact strong {
-    color: #d1d1d1;
+    color: #a3a3a3;
+    display: flex; 
+    align-items: center;
+    justify-content: center; /* Centriranje na mobilnom */
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-.social-link {
-    color: #f0f0f0;
-    transition: color 0.3s;
-}
-
-.social-link:hover {
-    color: var(--color-primary); /* Akcentovanje crvenom na hover */
-}
-
-/* Kolone sa linkovima */
-.footer-links-group {
-    /* Uklanjamo naslov menija, jer na slici stoje samo dugmad */
-    display: none; 
-}
-
-/* Stilizacija dugmadi (linkova) */
-.footer-links-list {
-    list-style: none;
-    padding: 0;
+.social-icon-link {
+    width: 40px;
+    height: 40px;
     display: flex;
-    flex-direction: column; 
-    gap: 0.75rem;
-    align-items: center; /* Centriranje na mobilnom */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #a3a3a3;
+    border: 1px solid #a3a3a3;
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform 0.2s ease-out;
 }
 
-.footer-link-btn {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    background-color: #333333; /* Tamno siva pozadina za dugmad */
-    color: #f0f0f0;
-    text-decoration: none;
-    font-weight: 500;
-    min-width: 180px;
-    transition: background-color 0.3s;
-    text-align: center;
-}
-
-.footer-link-btn:hover {
-    background-color: var(--color-primary); /* Crvena boja na hover */
-    color: white;
-}
-
-/* Primarno dugme (npr. Početna) */
-.footer-link-btn.primary-bg {
+.social-icon-link:hover {
     background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    transform: scale(1.1);
 }
-
-.footer-link-btn.primary-bg:hover {
-    background-color: #b91c1c;
-}
-
 
 /* Copyright traka */
 .copyright-bar {
@@ -1818,57 +1850,48 @@ body {
     margin-top: 2rem;
 }
 
-.copyright-bar p {
-    margin: 0.5rem 0;
-}
-
 .creator-link {
-    color: var(--color-primary); /* Crvena boja za link kreatora */
+    color: var(--color-primary); 
     text-decoration: none;
+    font-weight: 500;
 }
 
 .creator-link:hover {
     text-decoration: underline;
 }
 
-/* --- RESPONSIVE ADJUSTMENTS for Footer --- */
+/* --- RESPONSIVE ADJUSTMENTS for Footer (za 3 kolone) --- */
 
-/* Tablet (640px) */
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     .footer-grid {
-        /* 3 kolone na tabletu/desktopu */
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: left; /* Poravnavanje kolona lijevo */
+        /* 3 kolone na tabletu i desktopu */
+        grid-template-columns: 2fr 1fr 1.5fr; 
+        gap: 2.5rem;
+        text-align: left; 
+        padding-bottom: 4rem;
     }
     
-    .footer-links-group {
-        display: block; /* Prikazujemo grupe linkova */
-    }
-
     .footer-logo {
-        margin-right: auto;
-    }
-    
-    .footer-links-list {
-        align-items: flex-start; /* Poravnavanje dugmadi lijevo */
+        display: block; /* Vraćamo na block za left alignment */
+        width: 150px; /* Ista širina kao slika */
     }
 
-    .footer-logo .logo-img {
-        margin-left: 0;
-        margin-right: auto;
+    .footer-logo-img {
+        margin: 0; /* Ukloni automargine, poravnaj lijevo */
+    }
+
+    /* Poravnavanje sadržaja u prvoj i trećoj koloni levo */
+    .footer-info,
+    .footer-links-group,
+    .footer-contact-social {
+        text-align: left;
+    }
+    
+    .footer-contact {
+        justify-content: flex-start; /* Poravnaj kontakt lijevo */
     }
 
     .social-icons {
-        justify-content: flex-start;
-    }
-}
-
-/* Desktop (1024px) */
-@media (min-width: 1024px) {
-    .main-footer {
-        padding: 5rem 0 0;
+        justify-content: flex-start; /* Poravnaj socijalne ikone lijevo */
     }
 }
