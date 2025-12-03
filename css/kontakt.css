@@ -1,0 +1,228 @@
+/* --- HERO SEKCIJA - DODATNI STILOVI --- */
+
+/* Stil za Hero Podnaslov (Subtitle) */
+.hero-subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    color: var(--color-primary); /* Primarna boja za isticanje */
+    text-align: center;
+    margin-bottom: var(--spacing-sm); /* Mali razmak pre glavnog naslova */
+    
+    /* Senka teksta za bolji kontrast na pozadini */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    position: relative; /* Bitno za pozicioniranje iznad pozadine */
+    z-index: 3;
+    padding: 0 1rem;
+    line-height: 1.4;
+}
+
+/* Stil za Hero Naslov (za referencu, ako ga već nemate u styles.css) */
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    color: white; 
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 1); 
+    position: relative;
+    z-index: 3; 
+    padding: 0 1rem;
+    text-transform: uppercase; 
+    line-height: 1.2;
+}
+
+/* Responzivnost za veće ekrane */
+@media (min-width: 768px) {
+    .hero-subtitle {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-5xl);
+    }
+}
+
+
+
+/* --- KONTAKT.CSS --- */
+
+/* Osnovna struktura sekcije */
+.contact-section {
+    padding: var(--spacing-xl) var(--spacing-sm);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Naslovi i Opis */
+.section-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-description {
+    font-size: var(--font-size-lg);
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* --- GRID STRUKTURA (Desktop) --- */
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        display: grid;
+        /* Dve kolone: 1.2 dela za informacije, 2.8 dela za formu/mapu */
+        grid-template-columns: 1.2fr 2.8fr; 
+        gap: var(--spacing-xl);
+        align-items: flex-start;
+    }
+}
+
+
+/* --- 1. KOLONA: INFORMACIJE --- */
+
+.info-details {
+    margin-top: var(--spacing-lg);
+    border-left: 3px solid var(--color-primary);
+    padding-left: var(--spacing-md);
+}
+
+.info-block {
+    margin-bottom: var(--spacing-lg);
+}
+
+.info-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin-bottom: var(--spacing-xs);
+}
+
+.info-text {
+    font-weight: 600;
+    color: var(--color-muted);
+    line-height: 1.5;
+}
+
+/* Socijalne Ikonice */
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.social-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground); /* Beli tekst */
+}
+
+.social-icon-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* --- 2. KOLONA: FORMA I MAPA --- */
+
+.contact-form-map-area {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    background-color: var(--color-accent);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+}
+
+.dark .contact-form-map-area {
+    background-color: #262626; /* Tamna pozadina za formu/mapu u Dark Mode */
+}
+
+/* Forma */
+.form-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-muted);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-size: var(--font-size-base);
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+/* Dugme */
+.btn.primary-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border: none;
+    border-radius: var(--radius);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn.primary-btn:hover {
+    background-color: #b91c1c; /* Tamnija crvena na hover */
+}
+
+
+/* Mapa */
+.map-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-foreground);
+    margin-bottom: var(--spacing-sm);
+}
+
+.map-wrapper {
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-wrapper iframe {
+    /* Uklanjanje podrazumevane margine i paddinga iframe-a */
+    display: block; 
+}

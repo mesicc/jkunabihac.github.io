@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerija | Judo Klub Una Bihać</title>
-    
+    <title>Historija - Judo Klub Una Bihać</title>
     <link rel="stylesheet" href="css/styles.css"> 
-    <link rel="stylesheet" href="css/galerija.css"> 
+    <link rel="stylesheet" href="css/historija.css">
+    <link rel="stylesheet" href="css/kontakt.css">
 </head>
 <body>
+    
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <span class="logo-primary">Judo Klub</span>
                     <span class="logo-secondary">Una Bihać</span>
                 </a>
@@ -21,33 +22,20 @@
                     <a href="index.html" class="nav-link">Početna</a>
                     <a href="historija.html" class="nav-link">Historija</a> 
                     <a href="blog.html" class="nav-link">Blog</a>
-                    <a href="galerija.html" class="nav-link active">Galerija</a>
-                    <a href="kontakt.html" class="nav-link">Kontakt</a>
+                    <a href="galerija.html" class="nav-link">Galerija</a>
+                    <a href="kontakt.html" class="nav-link active">Kontakt</a>
                     <a href="kupuna.html" class="nav-link">Kup Una</a>
                 </nav>
 
                 <div class="header-actions">
-                    <!--   SEARCH COMMENT
-                    <button class="icon-btn" aria-label="Search">
+                    <button class="icon-btn theme-toggle" aria-label="Toggle Theme">
                         <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
                         </svg>
                     </button>
-                    -->
-                    <button class="icon-btn theme-toggle" aria-label="Toggle theme">
-                        <svg class="icon sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        <svg class="icon moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
-                    </button>
-                    <button class="icon-btn hamburger" aria-label="Toggle menu">
-                        <svg class="icon menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="icon close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    <button class="icon-btn hamburger" aria-label="Toggle Menu">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                         </svg>
                     </button>
                 </div>
@@ -55,7 +43,7 @@
         </div>
     </header>
 
-    <div class="mobile-menu">
+     <div class="mobile-menu">
         <nav class="mobile-nav">
             <a href="index.html" class="mobile-link">Početna</a>
             <a href="historija.html" class="mobile-link">O Nama</a>
@@ -65,66 +53,100 @@
             <a href="kupuna.html" class="mobile-link">Kup Una</a>
         </nav>
     </div>
+
     <div class="mobile-overlay"></div>
 
-    <main>
-        <section class="hero gallery-hero">
-            <div class="hero-background">
-                <video class="hero-video" autoplay muted loop playsinline>
-                    <source src="img/header.mp4" type="video/mp4">
-                    <source src="img/video.webm" type="video/webm">
-                    Vaš pretraživač ne podržava video.
-                </video>
-                <div class="hero-overlay"></div>
-            </div>
+    <section class="page-hero" style="background-image: url('img/galerija/nastim/tim2.jpg');">
+        <div class="container">
+            <p class="hero-subtitle">Imate pitanja ili se želite pridružiti našem klubu?</p>
+            <h1 class="hero-title">KONTAKTIRAJTE NAS</h1>
+        </div>
+    </section>
 
-            <div class="hero-content">
-                <div class="container">
-                    <h1 class="gallery-main-title">NAŠA <span class="text-primary">GALERIJA</span></h1>
-                    <p class="gallery-subtitle">Pogledajte najbolje momente sa naših treninga, takmičenja, kata, seminara i polaganja.</p>
+
+    <section class="contact-section container">
+        <div class="contact-grid">
+            
+            <div class="contact-info">
+                <h2 class="section-title">Kontaktirajte nas</h2>
+                <p class="section-description">
+                    Imate pitanje o treninzima, članarinama ili terminima? Pošaljite nam poruku putem kontakt forme ili nas direktno pozovite.
+                </p>
+
+                <div class="info-details">
+                    <div class="info-block">
+                        <h3 class="info-title">Lokacija</h3>
+                        <p>Adresa:</p>
+                        <p class="info-text">Bosanska 17, 77000 Bihać (Sportska dvorana)</p>
+                    </div>
+                    
+                    <div class="info-block">
+                        <h3 class="info-title">Termini i upiti</h3>
+                        <p>Telefon:</p>
+                        <p class="info-text">+387 61 123 456 (Trener Fikret)</p>
+                        <p>Email:</p>
+                        <p class="info-text">jk.una@bihac.ba</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h3 class="info-title">Radno vrijeme (Kancelarija)</h3>
+                        <p class="info-text">Ponedjeljak - Petak: 16:00 - 20:00h</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        
-        <section class="gallery-filters-section">
-            <div class="container">
-                <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all">Sve</button>
-                    <button class="filter-btn" data-filter="ourteam">Naš Tim</button>
-                    <button class="filter-btn" data-filter="competition">Takmičenja</button>
-                    <button class="filter-btn" data-filter="seminars">Seminari</button>
-                    <button class="filter-btn" data-filter="kata">Kata</button>
-                    <button class="filter-btn" data-filter="polaganja">Polaganje</button>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" class="social-icon-link">
+                        <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="social-icon-link">
+                        <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.75 0 3.085.01 4.167.06c1.077.052 1.83.218 2.472.463.784.303 1.348.867 1.651 1.651.245.642.41 1.395.463 2.472.05 1.082.06 1.417.06 4.167s-.01 3.085-.06 4.167c-.052 1.077-.218 1.83-.463 2.472-.303.784-.867 1.348-1.651 1.651-.642.245-1.395.41-2.472.463-1.082.05-1.417.06-4.167.06s-3.085-.01-4.167-.06c-1.077-.052-1.83-.218-2.472-.463-.784-.303-1.348-.867-1.651-1.651-.245-.642-.41-1.395-.463-2.472-.05-1.082-.06-1.417-.06-4.167s.01-3.085.06-4.167c.052-1.077.218-1.83.463-2.472.303-.784.867-1.348 1.651-1.651.642-.245 1.395-.41 2.472-.463C8.915 2.01 9.25 2 12 2zm0 2c-2.712 0-3.047.01-4.123.06-1.058.052-1.572.215-1.996.385-.424.17-.768.423-1.111.766-.343.343-.596.687-.766 1.111-.17.424-.333.938-.385 1.996-.05 1.076-.06 1.41-.06 4.123s.01 3.047.06 4.123c.052 1.058.215 1.572.385 1.996.17.424.423.768.766 1.111.343.343.687.596 1.111.766.424.17.938.333 1.996.385 1.076.05 1.41.06 4.123.06s3.047-.01 4.123-.06c1.058-.052 1.572-.215 1.996-.385.424-.17.768-.423 1.111-.766.343-.343.596-.687.766-1.111.17-.424.333-.938.385-1.996.05-1.076.06-1.41.06-4.123s-.01-3.047-.06-4.123c-.052-1.058-.215-1.572-.385-1.996-.17-.424-.423-.768-.766-1.111-.343-.343-.687-.596-1.111-.766-.424-.17-.938-.333-1.996-.385C15.047 4.01 14.712 4 12 4zm0 4c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm0 2c1.104 0 2 .896 2 2s-.896 2-2 2-2-.896-2-2 .896-2 2-2zm5-5c-.663 0-1.2.537-1.2 1.2s.537 1.2 1.2 1.2 1.2-.537 1.2-1.2-.537-1.2-1.2-1.2z"/></svg>
+                    </a>
                 </div>
-            </div>
-        </section>
-
-        <section class="gallery-content">
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="ourteam"><img src="img/galerija/nastim/tim1.jpg" alt="Naši najiskusniji majstori"></div>
-                <div class="gallery-item" data-category="ourteam"><img src="img/galerija/nastim/tim4.jpg" alt="Džudo trening 2"></div>
-                <div class="gallery-item" data-category="competition"><img src="img/galerija/takmicenje/takmicenje3.jpg" alt="Elma u akciji"></div>
-                <div class="gallery-item" data-category="polaganja"><img src="img/galerija/polaganje/polaganje1.jpg" alt="Polaganje pojasa 1"></div>
-                <div class="gallery-item" data-category="ourteam"><img src="img/galerija/nastim/tim3.jpg" alt="Džudo trening 3"></div>
-                <div class="gallery-item" data-category="competition"><img src="img/galerija/takmicenje/takmicenje4.jpg" alt="Takmičenje 2"></div>
-                <div class="gallery-item" data-category="seminars"><img src="img/galerija/kata/kata3.jpg" alt="Seminar 1"></div>
-                <div class="gallery-item" data-category="kata"><img src="img/galerija/kata/kata4.jpg" alt="Kata 1"></div>
-                <div class="gallery-item" data-category="ourteam"><img src="img/galerija/nastim/tim2.jpg" alt="Džudo trening 4"></div>
-                <div class="gallery-item" data-category="competition"><img src="img/galerija/takmicenje/takmicenje7.jpg" alt="Takmičenje 3"></div>
-                <div class="gallery-item" data-category="polaganja"><img src="img/galerija/polaganje/polaganje4.jpg" alt="Polaganje pojasa 2"></div>
-                <div class="gallery-item" data-category="kata"><img src="img/galerija/kata/kata6.jpg" alt="Kata 2"></div>
-
-                <div class="gallery-item hidden-row" data-category="ourteam"><img src="img/galerija/nastim/tim3.jpg" alt="Džudo trening 5"></div>
-                <div class="gallery-item hidden-row" data-category="competition"><img src="img/galerija/takmicenje/takmicenje6.jpg" alt="Takmičenje 4"></div>
-                <div class="gallery-item hidden-row" data-category="seminars"><img src="img/galerija/kata/kata1.jpg" alt="Seminar 3"></div>
-                <div class="gallery-item hidden-row" data-category="polaganja"><img src="img/galerija/polaganje/polaganje3.jpg" alt="Polaganje pojasa 3"></div>
             </div>
             
-            <div class="load-more-container">
-                 <button id="load-more-btn" class="load-more-btn-style">Vidi Više</button>
+            <div class="contact-form-map-area">
+                
+                <div class="contact-form-wrapper">
+                    <h3 class="form-title">Pošaljite nam poruku</h3>
+                    <form action="/submit-form" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ime i Prezime</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Adresa</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Naslov poruke</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Vaša poruka</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Pošalji poruku</button>
+                    </form>
+                </div>
+                
+                <div class="map-wrapper">
+                    <h3 class="map-title">Naša lokacija</h3>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3805668026134!2d15.844907376892595!3d44.81381107107086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47614108bf870403%3A0xe6b90d051b84c004!2zSnVkbyBrbHViIOKAmOKAmVVuYeKAmeKAmSBCaWhhYw!5e0!3m2!1shr!2sba!4v1764367165666!5m2!1shr!2sba"
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
             </div>
-        </section>
-    </main>
+            
+        </div>
+    </section>
+
 
     <footer class="footer">
         <div class="container">
@@ -202,15 +224,6 @@
         </div>
     </footer>
     
-    <div id="image-modal" class="modal">
-        <span class="close-btn">&times;</span>
-        <img class="modal-content" id="modal-image">
-        <a class="prev-btn">&#10094;</a>
-        <a class="next-btn">&#10095;</a>
-    </div>
-
-    <script src="js/main.js"></script> 
-    <script src="js/galerija.js"></script> 
-
-</body>
+    <script src="js/main.js"></script>
+    </body>
 </html>
