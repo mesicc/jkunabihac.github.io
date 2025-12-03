@@ -1,0 +1,161 @@
+/* --- HERO SEKCIJA (Prelivanje ispod Navbara) --- */
+
+.page-hero.kup-hero {
+    position: relative; 
+    height: 100vh; 
+    margin-top: 0; 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Postavljanje Hero sekcije da bude Flex kontejner */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Gura traku na dno */
+    align-items: center;
+    
+    z-index: 1; 
+    padding-top: 5rem; /* Dodatni padding zbog fiksnog navbara na vrhu */
+    padding-bottom: 3rem; 
+}
+
+/* Overlay je bitan za kontrast */
+.page-hero.kup-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Malo tamniji overlay za bolji kontrast */
+    z-index: 2;
+}
+
+/* Wrapper za centralni tekst */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    /* Centriranje sadržaja unutar wrappera */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Omogućava da zauzme sav vertikalni prostor */
+    width: 100%;
+}
+
+/* Tekstualni elementi */
+.hero-label {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-title {
+    font-size: var(--font-size-5xl);
+    font-weight: 900;
+    color: white; 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 1); 
+    text-transform: uppercase; 
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    color: white; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Akciona dugmad */
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.hero-actions .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-lg);
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Primarno dugme (Prijavi se) */
+.hero-actions .primary-btn {
+    background-color: var(--color-primary); /* Crvena */
+    color: white;
+}
+.hero-actions .primary-btn:hover {
+    background-color: #b91c1c;
+}
+
+/* Sekundarno dugme (Pogledaj program) - Transparentno sa obrubom */
+.hero-actions .secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+.hero-actions .secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Traka na dnu --- */
+
+.hero-bottom-bar {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    align-items: flex-start;
+    padding: var(--spacing-sm);
+    background-color: rgba(0, 0, 0, 0.5); /* Pozadina za čitljivost teksta */
+    width: 100%;
+    margin: 0; /* Uklanja marginu od kontejnera */
+}
+
+.bar-tag {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-primary); /* Crvena */
+    text-transform: uppercase;
+}
+
+.bar-text {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: white;
+}
+
+
+/* --- Responzivnost za Desktop/Velike ekrane --- */
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: var(--font-size-6xl); 
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero-bottom-bar {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+    
+    .bar-text {
+        font-size: var(--font-size-2xl);
+    }
+}
